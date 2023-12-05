@@ -5,3 +5,8 @@
 class Hangman():
 
     pass
+
+
+class GameData():
+
+    pass
