@@ -1,5 +1,18 @@
 from random import choice
 
+class GameData():
+
+    #Initialize the game data:
+    #The answer is the chosen word from the word list
+    #Progress starts with an underscore for each letter of the owrd
+    #As none of the letters have been filled in yet
+    #None of the letters are guessed yet so that is an empty list
+    
+    def __init__(self, word):
+        self.answer = word
+        self.progress = ''.join('_' for i in word)
+        self.guessed = []
+        
 class Hangman():
 
     #List of words to choose from for the game
@@ -19,9 +32,6 @@ class Hangman():
              "zodiac", "zombie"]
 
     #Pick a word at random from the list
-    chosen_word = random.choice(words);
+    chosen_word = choice(words);
 
-
-class GameData():
-
-    pass
+    game_data = GameData(chosen_word)
