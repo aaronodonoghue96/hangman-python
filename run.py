@@ -7,12 +7,18 @@ class GameData():
     #Progress starts with an underscore for each letter of the owrd
     #As none of the letters have been filled in yet
     #None of the letters are guessed yet so that is an empty list
-    
+
     def __init__(self, word):
         self.answer = word
         self.progress = ''.join('_' for i in word)
         self.guessed = []
-        
+
+    def add_guess(self, letter):
+        self.guessed += letter
+
+        if letter not in self.answer:
+            self.lives -= 1
+
 class Hangman():
 
     #List of words to choose from for the game
