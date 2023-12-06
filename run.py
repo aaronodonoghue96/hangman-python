@@ -2,6 +2,9 @@ from random import choice
 
 class GameData():
 
+    # Alphabet for checking inputs against to ensure they are English letters
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+
     #Initialize the game data:
     #The answer is the chosen word from the word list
     #Progress starts with an underscore for each letter of the owrd
@@ -19,6 +22,11 @@ class GameData():
         # Validation against numbers, punctuation, other non-alpha characters
         if letter.isalpha() is False:
             print(f"{letter} is not a letter.\n \
+                    Please choose a letter in the English alphabet.")
+            return
+        # Validation against non-English letters such as é
+        elif letter not in self.alphabet:
+            print(f"{letter} is not in the English alphabet.\n \
                     Please choose a letter in the English alphabet.")
             return
         # Validation against guessing the same letter twice
