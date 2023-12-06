@@ -1,15 +1,16 @@
 from random import choice
 
+
 class GameData():
 
     # Alphabet for checking inputs against to ensure they are English letters
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-    #Initialize the game data:
-    #The answer is the chosen word from the word list
-    #Progress starts with an underscore for each letter of the owrd
-    #As none of the letters have been filled in yet
-    #None of the letters are guessed yet so that is an empty list
+    # Initialize the game data:
+    # The answer is the chosen word from the word list
+    # Progress starts with an underscore for each letter of the owrd
+    # As none of the letters have been filled in yet
+    # None of the letters are guessed yet so that is an empty list
 
     def __init__(self, word):
         self.answer = word
@@ -56,17 +57,20 @@ class GameData():
 
     # Validation against empty input such as whitespace or nothing at all
     def validate_empty(self, guess):
-        return len(guess) != 0:
+        return len(guess) != 0
 
     # Validation against numbers, punctuation, other non-alpha characters
     def validate_letter(self, guess):
         return guess.isalpha()
 
+    # Validation against non-English letters such as é
     def validate_english(self, guess):
         return guess not in alphabet
 
+    # Validation against guessing the same letter twice
     def validate_duplicate(self, guess):
         return guess not in self.guessed
+
 
 class Hangman():
 
@@ -94,11 +98,11 @@ class Hangman():
         replay = True
 
         while replay is True:
-            #List of words to choose from for the game
+            # List of words to choose from for the game
             words = self.populate_wordlist()
 
-            #Pick a word at random from the list
-            chosen_word = choice(words);
+            # Pick a word at random from the list
+            chosen_word = choice(words)
 
             game_data = GameData(chosen_word)
 
