@@ -51,42 +51,56 @@ class GameData():
 
 class Hangman():
 
-    #List of words to choose from for the game
-    words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
-             "cryptic", "dizzy", "duplex", "embezzle", "equip",
-             "faking", "fixable", "fjord", "flapjack", "galaxy",
-             "galvanize", "gizmo", "hazard", "hyphen", "icebox",
-             "injury", "jackpot", "jaywalking", "jigsaw", "joking",
-             "jukebox", "keyhole", "kiosk", "lengths", "luxury",
-             "matrix", "megahertz", "microwave", "mystery", "nightclub",
-             "onyx", "oxidize", "oxygen", "polka", "psychic",
-             "puzzle", "quartz", "quizzical", "rhubarb", "rickshaw",
-             "scratch", "skiving", "snazzy", "sphinx", "stretch",
-             "subway", "swivel", "syndrome", "topaz", "transgress",
-             "transplant", "twelfth", "unknown", "uptown", "vixen",
-             "vortex", "waltz", "wizard", "zephyr", "zigzag",
-             "zodiac", "zombie"]
+    play_again = True
 
-    #Pick a word at random from the list
-    chosen_word = choice(words);
+    while play_again is True:
+        #List of words to choose from for the game
+        words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
+                 "cryptic", "dizzy", "duplex", "embezzle", "equip",
+                 "faking", "fixable", "fjord", "flapjack", "galaxy",
+                 "galvanize", "gizmo", "hazard", "hyphen", "icebox",
+                 "injury", "jackpot", "jaywalking", "jigsaw", "joking",
+                 "jukebox", "keyhole", "kiosk", "lengths", "luxury",
+                 "matrix", "megahertz", "microwave", "mystery", "nightclub",
+                 "onyx", "oxidize", "oxygen", "polka", "psychic",
+                 "puzzle", "quartz", "quizzical", "rhubarb", "rickshaw",
+                 "scratch", "skiving", "snazzy", "sphinx", "stretch",
+                 "subway", "swivel", "syndrome", "topaz", "transgress",
+                 "transplant", "twelfth", "unknown", "uptown", "vixen",
+                 "vortex", "waltz", "wizard", "zephyr", "zigzag",
+                 "zodiac", "zombie"]
 
-    game_data = GameData(chosen_word)
+        #Pick a word at random from the list
+        chosen_word = choice(words);
 
-    # Provide either the singular "life" or plural "lives"
-    # based on how many lives the player has left
-    life_or_lives = "life" if game_data.lives == 1 else "lives"
+        game_data = GameData(chosen_word)
 
-    while True:
-        print(f"{game_data.lives} {life_or_lives} remaining")
-        print(f"You have guessed: {game_data.guessed}")
-        print(f"Word: {game_data.show_word_progress()}")
-        letter = input("Guess a letter: ").lower()
-        game_data.add_guess(letter)
+        # Provide either the singular "life" or plural "lives"
+        # based on how many lives the player has left
+        life_or_lives = "life" if game_data.lives == 1 else "lives"
 
-        if game_data.show_word_progress() == game_data.answer:
-            print(f"You win! The word was {game_data.answer}")
-            break
+        while True:
+            print(f"{game_data.lives} {life_or_lives} remaining")
+            print(f"You have guessed: {game_data.guessed}")
+            print(f"Word: {game_data.show_word_progress()}")
+            letter = input("Guess a letter: ").lower()
+            game_data.add_guess(letter)
 
-        if game_data.lives == 0:
-            print(f"Game Over. The word was {game_data.answer}")
-            break
+            if game_data.show_word_progress() == game_data.answer:
+                print(f"You win! The word was {game_data.answer}")
+                break
+
+            if game_data.lives == 0:
+                print(f"Game Over. The word was {game_data.answer}")
+                break
+
+        play_again_choice = ""
+
+        while play_again_choice.lower() not in ['y', 'n']:
+            play_again_choice = input("Play again? (y/n)")
+            if play_again_choice.lower() == "n":
+                play_again = False
+            elif play_again_choice.lower() == "y":
+                play_again = True
+            else:
+                print("Please select y for yes or n for no")
