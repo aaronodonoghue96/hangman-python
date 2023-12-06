@@ -30,30 +30,43 @@ class GameData():
 
     def add_guess(self, letter):
         # Remove any whitespace from the guess, and make it case-insensitive
+        valid = True
         guess = letter.lower().strip()
-        # Validation against empty input such as whitespace or nothing at all
-        if len(guess) == 0:
+        # If the validation fails, print the error message and return
+        if not validate_empty(guess):
             print("Please enter a letter.")
-            return
-        # Validation against numbers, punctuation, other non-alpha characters
-        if guess.isalpha() is False:
+            valid = False
+        elif not validate_letter(guess):
             print(f"{guess} is not a letter.\n \
                     Please choose a letter in the English alphabet.")
-            return
-        # Validation against non-English letters such as é
-        elif guess not in self.alphabet:
+            valid = False
+        elif not validate_english(guess):
             print(f"{guess} is not in the English alphabet.\n \
                     Please choose a letter in the English alphabet.")
-            return
-        # Validation against guessing the same letter twice
-        elif guess in self.guessed:
+            valid = False
+        elif not validate_duplicate(guess):
             print(f"You have already guessed the letter {guess}")
-            return
+            valid = False
 
-        self.guessed += guess
+        if valid:
+            self.guessed += guess
 
-        if guess not in self.answer:
-            self.lives -= 1
+            if guess not in self.answer:
+                self.lives -= 1
+
+    # Validation against empty input such as whitespace or nothing at all
+    def validate_empty(self, guess):
+        return len(guess) != 0:
+
+    # Validation against numbers, punctuation, other non-alpha characters
+    def validate_letter(self, guess):
+        return guess.isalpha()
+
+    def validate_english(self, guess):
+        return guess not in alphabet
+
+    def validate_duplicate(self, guess):
+        return guess not in self.guessed
 
 class Hangman():
 
