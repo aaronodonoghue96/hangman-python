@@ -29,24 +29,30 @@ class GameData():
         return progress
 
     def add_guess(self, letter):
+        # Remove any whitespace from the guess, and make it case-insensitive
+        guess = letter.lower().strip()
+        # Validation against empty input such as whitespace or nothing at all
+        if len(guess) == 0:
+            print("Please enter a letter.")
+            return
         # Validation against numbers, punctuation, other non-alpha characters
-        if letter.isalpha() is False:
-            print(f"{letter} is not a letter.\n \
+        if guess.isalpha() is False:
+            print(f"{guess} is not a letter.\n \
                     Please choose a letter in the English alphabet.")
             return
         # Validation against non-English letters such as é
-        elif letter not in self.alphabet:
-            print(f"{letter} is not in the English alphabet.\n \
+        elif guess not in self.alphabet:
+            print(f"{guess} is not in the English alphabet.\n \
                     Please choose a letter in the English alphabet.")
             return
         # Validation against guessing the same letter twice
-        elif letter in self.guessed:
-            print(f"You have already guessed the letter {letter}")
+    elif guess in self.guessed:
+            print(f"You have already guessed the letter {guess}")
             return
 
-        self.guessed += letter
+        self.guessed += guess
 
-        if letter not in self.answer:
+        if guess not in self.answer:
             self.lives -= 1
 
 class Hangman():
