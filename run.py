@@ -16,6 +16,18 @@ class GameData():
         self.progress = ''.join('_' for i in word)
         self.guessed = []
 
+    # Show the progress the player has made on guessing the word
+    # by filling in every letter in the word they guessed correctly
+    # while hiding the rest by leaving them blank
+    def show_word_progress(self):
+        progress = ''
+        for i in self.answer:
+            if i in self.guessed:
+                progress += i
+            else:
+                progress += '_'
+        return progress
+
     def add_guess(self, letter):
         self.guessed += letter
 
