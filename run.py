@@ -29,8 +29,6 @@ class GameData():
         return progress
 
     def add_guess(self, letter):
-        self.guessed += letter
-
         # Validation against numbers, punctuation, other non-alpha characters
         if letter.isalpha() is False:
             print(f"{letter} is not a letter.\n \
@@ -45,6 +43,8 @@ class GameData():
         elif letter in self.guessed:
             print(f"You have already guessed the letter {letter}")
             return
+
+        self.guessed += letter
 
         if letter not in self.answer:
             self.lives -= 1
