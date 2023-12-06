@@ -21,6 +21,10 @@ class GameData():
             print(f"{letter} is not a letter.\n \
                     Please choose a letter in the English alphabet.")
             return
+        # Validation against guessing the same letter twice
+        elif letter in self.guessed:
+            print(f"You have already guessed the letter {letter}")
+            return
 
         if letter not in self.answer:
             self.lives -= 1
