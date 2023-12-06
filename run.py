@@ -16,6 +16,12 @@ class GameData():
     def add_guess(self, letter):
         self.guessed += letter
 
+        # Validation against numbers, punctuation, other non-alpha characters
+        if letter.isalpha() is False:
+            print(f"{letter} is not a letter.\n \
+                    Please choose a letter in the English alphabet.")
+            return
+
         if letter not in self.answer:
             self.lives -= 1
 
