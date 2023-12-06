@@ -73,25 +73,29 @@ class Hangman():
     def __init__(self):
         self.game_loop()
 
+    def populate_wordlist(self):
+        words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
+                 "cryptic", "dizzy", "duplex", "embezzle", "equip",
+                 "faking", "fixable", "fjord", "flapjack", "galaxy",
+                 "galvanize", "gizmo", "hazard", "hyphen", "icebox",
+                 "injury", "jackpot", "jaywalking", "jigsaw", "joking",
+                 "jukebox", "keyhole", "kiosk", "lengths", "luxury",
+                 "matrix", "megahertz", "microwave", "mystery", "nightclub",
+                 "onyx", "oxidize", "oxygen", "polka", "psychic",
+                 "puzzle", "quartz", "quizzical", "rhubarb", "rickshaw",
+                 "scratch", "skiving", "snazzy", "sphinx", "stretch",
+                 "subway", "swivel", "syndrome", "topaz", "transgress",
+                 "transplant", "twelfth", "unknown", "uptown", "vixen",
+                 "vortex", "waltz", "wizard", "zephyr", "zigzag",
+                 "zodiac", "zombie"]
+        return words
+
     def game_loop(self):
         replay = True
 
         while replay is True:
             #List of words to choose from for the game
-            words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
-                     "cryptic", "dizzy", "duplex", "embezzle", "equip",
-                     "faking", "fixable", "fjord", "flapjack", "galaxy",
-                     "galvanize", "gizmo", "hazard", "hyphen", "icebox",
-                     "injury", "jackpot", "jaywalking", "jigsaw", "joking",
-                     "jukebox", "keyhole", "kiosk", "lengths", "luxury",
-                     "matrix", "megahertz", "microwave", "mystery", "nightclub",
-                     "onyx", "oxidize", "oxygen", "polka", "psychic",
-                     "puzzle", "quartz", "quizzical", "rhubarb", "rickshaw",
-                     "scratch", "skiving", "snazzy", "sphinx", "stretch",
-                     "subway", "swivel", "syndrome", "topaz", "transgress",
-                     "transplant", "twelfth", "unknown", "uptown", "vixen",
-                     "vortex", "waltz", "wizard", "zephyr", "zigzag",
-                     "zodiac", "zombie"]
+            words = self.populate_wordlist()
 
             #Pick a word at random from the list
             chosen_word = choice(words);
