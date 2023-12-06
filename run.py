@@ -46,7 +46,7 @@ class GameData():
                     Please choose a letter in the English alphabet.")
             return
         # Validation against guessing the same letter twice
-    elif guess in self.guessed:
+        elif guess in self.guessed:
             print(f"You have already guessed the letter {guess}")
             return
 
