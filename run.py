@@ -71,3 +71,22 @@ class Hangman():
     chosen_word = choice(words);
 
     game_data = GameData(chosen_word)
+
+    # Provide either the singular "life" or plural "lives"
+    # based on how many lives the player has left
+    life_or_lives = "life" if game_data.lives == 1 else "lives"
+
+    while True:
+        print(f"{game_data.lives} {life_or_lives} remaining")
+        print(f"You have guessed: {game_data.guessed}")
+        print(f"Word: {game_data.show_word_progress()}")
+        letter = input("Guess a letter: ").lower()
+        game_data.add_guess(letter)
+
+        if game_data.show_word_progress() == game_data.answer:
+            print(f"You win! The word was {game_data.answer}")
+            break
+
+        if game_data.lives == 0:
+            print(f"Game Over. The word was {game_data.answer}")
+            break
