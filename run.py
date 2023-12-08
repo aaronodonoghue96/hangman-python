@@ -6,6 +6,10 @@ class GameData():
     # Alphabet for checking inputs against to ensure they are English letters
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+    wins = 0
+    losses = 0
+    win_streak = 0
+
     # Initialize the game data:
     # The answer is the chosen word from the word list
     # Progress starts with an underscore for each letter of the owrd
@@ -120,17 +124,58 @@ class Hangman():
 
     def main_menu(self):
         print("Welcome to Hangman!")
-        option = input("Choose an option: [P]lay, [R]ules, [S]tats or [Q]uit")
-        if option == "P"
+        while True:
+            option = input("Choose an option: [P]lay, [R]ules,\
+[S]tats or [Q]uit ").upper()
+            if option == "P":
+                self.difficulty_select()
+            elif option == "R":
+                self.show_rules()
+            elif option == "S":
+                self.show_stats()
+            elif option == "Q":
+                break
+            else:
+                print("Please select a valid option.")
 
     def difficulty_select(self):
-        level = input("Choose a level: [E]asy, [M]edium, [H]ard, [I]mpossible")
+        level = input("Choose a level: [E]asy, [M]edium,\
+[H]ard, [I]mpossible ").upper()
         if level == "E":
             self.game_loop("easy")
+        elif level == "M":
+            self.game_loop("medium")
+        elif level == "H":
+            self.game_loop("hard")
+        elif level == "I":
+            self.game_loop("impossible")
+
+    def show_rules(self):
+        print("Insert rules of hangman here")
+
+    def show_stats(self):
+        wins = GameData.wins
+        losses = GameData.losses
+        win_streak = GameData.win_streak
+        win_ratio = 0 # will stay at 0 if there are no games played
+        
+        try:
+            win_ratio = (wins / (wins + losses)) * 100
+        except ZeroDivisionError:
+            print("No games were played yet so there are no games won")
+            
+        print(f"Wins: {wins}, Losses: {losses}, Win Streak: {win_streak}, \
+Win Ratio: {win_ratio}")
 
     def populate_wordlist(self, difficulty):
-        
-        return words
+        if difficulty == "easy":
+            return self.easy_words
+        elif difficulty == "medium":
+            return self.medium_words
+        elif difficulty == "hard":
+            return self.hard_words
+        elif difficulty == "impossible":
+            return self.impossible_words
 
     def game_loop(self, difficulty):
         replay = True
@@ -167,9 +212,13 @@ class Hangman():
 
     def win(self, game_data):
         print(f"You win! The word was {game_data.answer}")
+        GameData.wins += 1
+        GameData.win_streak += 1
 
     def game_over(self, game_data):
         print(f"Game Over. The word was {game_data.answer}")
+        GameData.losses += 1
+        GameData.win_streak = 0
 
     def play_again(self):
         play_again_choice = ""
