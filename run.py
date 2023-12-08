@@ -75,11 +75,32 @@ class GameData():
 
 class Hangman():
 
-    def __init__(self):
-        self.game_loop()
+    # Easy words have a lot of the most common letters in English,
+    # such as A, E, I, N, O, R, S, and T.
+    easy_words = ["answer", "artist", "blaster", "brain", "coaster",
+                  "creation", "detain", "drained", "eateries", "eastern",
+                  "enter", "falter", "feature", "grains", "greatest",
+                  "heater", "honest", "interest", "latest", "leanest",
+                  "litter", "master", "minor", "nearest", "notes",
+                  "orange", "painter", "points", "rain", "relation",
+                  "release", "roasted", "satin", "seat", "snare",
+                  "stairs", "strain", "tanner", "trainer", "unease",
+                  "user", "various", "vines", "water", "winter", "years"]
 
-    def populate_wordlist(self):
-        words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
+    # Medium words use slightly less common letters a bit more often,
+    # and are missing some of the more common letters
+    medium_words = ["allowed", "apricot", "archer", "austere", "carrot",
+                    "dragon", "floating", "fraction", "pressure", "search",
+                    "status", "target", "union"]
+
+    # Hard words use more uncommon letters more often than the previous
+    # categories
+    hard_words = ["afford", "freeze", "major"]
+
+    # Impossible words have a lot of rare letters like J, Q, X and Z,
+    # few vowels or Y as a vowel, unusual or long consonant sequences,
+    # or few distinct letters meaning fewer chances to guess right
+    impossible_words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
                  "cryptic", "dizzy", "duplex", "embezzle", "equip",
                  "faking", "fixable", "fjord", "flapjack", "galaxy",
                  "galvanize", "gizmo", "hazard", "hyphen", "icebox",
@@ -93,15 +114,30 @@ class Hangman():
                  "transplant", "twelfth", "unknown", "uptown", "vixen",
                  "vortex", "waltz", "wizard", "zephyr", "zigzag",
                  "zodiac", "zombie"]
+
+    def __init__(self):
+        self.main_menu()
+
+    def main_menu(self):
+        print("Welcome to Hangman!")
+        option = input("Choose an option: [P]lay, [R]ules, [S]tats or [Q]uit")
+        if option == "P"
+
+    def difficulty_select(self):
+        level = input("Choose a level: [E]asy, [M]edium, [H]ard, [I]mpossible")
+        if level == "E":
+            self.game_loop("easy")
+
+    def populate_wordlist(self, difficulty):
+        
         return words
 
-    def game_loop(self):
-        print("Hangman")
+    def game_loop(self, difficulty):
         replay = True
 
         while replay is True:
             # List of words to choose from for the game
-            words = self.populate_wordlist()
+            words = self.populate_wordlist(difficulty)
 
             # Pick a word at random from the list
             chosen_word = choice(words)
