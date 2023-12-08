@@ -13,14 +13,16 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ## How To Play
 
-## User Stories
-
 ## User Experience
+
+### User Stories
 
 ## Features
 
 ### Difficulty Levels
 The four difficulty levels available in this game are to accommodate different skill levels, and offer an extra challenge to those who have mastered the strategy of playing hangman. In the easier words, there is more use of letters that are most common in English, such as A, E, I, N, O, R, S and T. In the harder words, there is less use of common vowels like A and E, more use of U and Y as vowels, repeated letters (thus reducing the amount of possible correct guesses), and other rare letters like X and Z, to make guessing more challenging.
+
+## Technologies Used
 
 ## Testing
 
@@ -58,3 +60,5 @@ In the stats menu:
 - No unfixed bugs have been found to remain in this project.
 
 ## Deployment
+
+## Credits
