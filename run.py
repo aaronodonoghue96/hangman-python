@@ -6,6 +6,7 @@ class GameData():
     # Alphabet for checking inputs against to ensure they are English letters
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+    # Stats for wins, losses, and win streak, set to 0 when no games played
     wins = 0
     losses = 0
     win_streak = 0
@@ -54,6 +55,8 @@ class GameData():
             print(f"You have already guessed the letter {guess}")
             valid = False
 
+        # If the validation passes, check if the letter is in the word
+        # If not, lose a life, and in any case, mark it as guessed
         if valid:
             self.guessed += guess
 
@@ -76,11 +79,13 @@ class GameData():
     def validate_duplicate(self, guess):
         return guess not in self.guessed
 
+    # Record the victory in the stats and the current win streak
     def win(self):
         print(f"You win! The word was {self.answer}")
         GameData.wins += 1
         GameData.win_streak += 1
 
+    # Record the loss in the stats and reset the current win streak
     def game_over(self):
         print(f"Game Over. The word was {self.answer}")
         GameData.losses += 1
@@ -89,6 +94,7 @@ class GameData():
 
 class Hangman():
 
+    # A list of animal names for the animals theme
     animals_words = ["alligator", "armadillo", "badger", "bear", "beetle",
                     "bird", "cat", "cobra", "cow", "dog", "elephant", "ferret",
                     "fish", "fox", "goat", "horse", "jellyfish", "koala",
@@ -96,6 +102,7 @@ class Hangman():
                     "rhino", "shark", "sheep", "snake", "squid", "squirrel",
                     "tiger", "vole", "vulture", "walrus", "whale", "zebra"]
 
+    # A list of food names for the food theme
     food_words = ["apple", "apricot", "bacon", "banana", "blackberry",
                  "blueberry", "bread", "burger", "cake", "carrot", "cheese",
                  "chicken", "chocolate", "cookie", "croissant", "donut",
@@ -104,6 +111,7 @@ class Hangman():
                  "pizza", "radish", "sandwich", "sausage", "steak", "tomato",
                  "vegetable", "watermelon"]
 
+    # A list of colour names for the colours theme
     colours_words = ["amber", "aqua", "azure", "beige", "black", "blue",
                     "brown", "chartreuse", "copper", "cream", "cyan", "fawn",
                     "fuchsia", "gold", "green", "grey", "hazel", "jade",
@@ -112,6 +120,7 @@ class Hangman():
                     "silver", "tan", "teal", "turquoise", "violet", "white",
                     "yellow"]
 
+    # A list of musical instrument names for the instruments theme
     instruments_words = ["accordion", "bagpipes", "banjo", "bass", "bassoon",
                         "bongos", "cello", "clarinet", "cymbal", "didgeridoo",
                         "drum", "fiddle", "flute", "glockenspiel", "guitar",
@@ -120,14 +129,18 @@ class Hangman():
                         "piano", "recorder", "saxophone", "sitar",
                         "synthesizer", "tambourine", "triangle", "trombone",
                         "trumpet", "tuba", "ukulele", "viola", "violin",
-                        "xylophone"]
+                        "xylophone", "zither"]
 
+    # Upon starting the application, load the main menu
     def __init__(self):
         self.main_menu()
 
+    # Load up the main menu of the game with the four initial options
     def main_menu(self):
         print("Welcome to Hangman!")
         while True:
+            # Select an option by entering the first letter. Invalid
+            # letters will result in a prompt to choose a valid option
             option = input("Choose an option: [P]lay, [R]ules, \
 [S]tats or [Q]uit ").upper()
             if option == "P":
@@ -136,14 +149,18 @@ class Hangman():
                 self.show_rules()
             elif option == "S":
                 self.show_stats()
-            elif option == "Q":
+            elif option == "Q": # Quitting will end the program
                 break
             else:
                 print("Please select a valid option.")
 
+    # Give the user a selection of themes to choose from, and the option
+    # to go back. X is chosen as the "go back" letter as a. It is reminiscent
+    # of the use of X as a "cancel" symbol, and b. It is highly unlikely to
+    # clash with the initial of any future category
     def theme_select(self):
-        level = input("Choose a theme: [A]nimals, [F]oods, \
-[C]olours, [I]nstruments ").upper()
+        level = input("Choose a theme: [A]nimals, [F]oods, [C]olours, \
+[I]nstruments, or choose [X] to go back ").upper()
         if level == "A":
             self.game_loop("animals")
         elif level == "F":
@@ -152,8 +169,14 @@ class Hangman():
             self.game_loop("colours")
         elif level == "I":
             self.game_loop("instruments")
+        elif level == "X":
+            self.main_menu()
+        else:
+            print("Please select a valid option.")
 
+    # Display the rules of the game to the player
     def show_rules(self):
+        print("----------RULES----------")
         print("You start the game with 8 lives, and must guess a word.")
         print("You must guess a letter on each turn, if it is correct, every")
         print("occurrence of the letter in the word will appear. Otherwise,")
@@ -162,7 +185,10 @@ class Hangman():
         print("but won't lose a life. If you run out of lives, you lose the")
         print("game. If you guess the full word, you win. In either case,")
         print("you have the option to play again or return to the main menu")
+        print("--------------------")
 
+    # Display the stats to the player on how many wins and losses they have
+    # their current win streak, and win ratio
     def show_stats(self):
         wins = GameData.wins
         losses = GameData.losses
@@ -177,6 +203,7 @@ class Hangman():
         print(f"Wins: {wins}, Losses: {losses}, Win Streak: {win_streak}, \
 Win Ratio: {win_ratio}")
 
+    # Populate the wordlist with the words from the specified theme
     def populate_wordlist(self, theme):
         if theme == "animals":
             return self.animals_words
@@ -187,9 +214,11 @@ Win Ratio: {win_ratio}")
         elif theme == "instruments":
             return self.instruments_words
 
+    # Start the game with randomized word from a specified theme
     def game_loop(self, theme):
         replay = True
 
+        # Replay will be false if you decide not to play again at the end
         while replay is True:
             # List of words to choose from for the game
             words = self.populate_wordlist(theme)
@@ -203,6 +232,8 @@ Win Ratio: {win_ratio}")
             # based on how many lives the player has left
             life_or_lives = "life" if game_data.lives == 1 else "lives"
 
+            # While the game is running, display the lives left, guessed
+            # letters, word progress so far, and prompt the user to guess
             while True:
                 print(f"{game_data.lives} {life_or_lives} remaining")
                 print(f"You have guessed: {game_data.guessed}")
@@ -210,16 +241,21 @@ Win Ratio: {win_ratio}")
                 letter = input("Guess a letter: ").lower()
                 game_data.add_guess(letter)
 
+                # If the guess completes the word, you have won
                 if game_data.show_word_progress() == game_data.answer:
                     game_data.win()
                     break
 
+                # If the guess costs you your last life, you have lost
                 if game_data.lives == 0:
                     game_data.game_over()
                     break
 
+            # If the user wants to play again, restart the loop, if not,
+            # end the loop and return to the main menu
             replay = self.play_again()
 
+    # Offer the player the choice to pkay again or not
     def play_again(self):
         play_again_choice = ""
 
