@@ -1,5 +1,5 @@
 from random import choice
-
+# This library is needed to choose a random word from the chosen theme
 
 class GameData():
 
@@ -97,17 +97,30 @@ class Hangman():
                     "tiger", "vole", "vulture", "walrus", "whale", "zebra"]
 
     food_words = ["apple", "apricot", "bacon", "banana", "blackberry",
-                 "blueberry", "bread", "cake", "carrot", "cheese", "chicken",
-                 "chocolate", "cookie", "croissant", "donut", "egg", "fish",
-                 "grapes", "ice cream", "jelly", "lemon", "lime", "mango",
-                 "meat", "orange", "peach", "pear", "pickle", "pizza",
-                 "radish", "sandwich", "sausage", "steak", "tomato",
+                 "blueberry", "bread", "burger", "cake", "carrot", "cheese",
+                 "chicken", "chocolate", "cookie", "croissant", "donut",
+                 "egg", "fish", "grapes", "honey", "jelly", "lemon",
+                 "lime", "mango", "meat", "orange", "peach", "pear", "pickle",
+                 "pizza", "radish", "sandwich", "sausage", "steak", "tomato",
                  "vegetable", "watermelon"]
 
     colours_words = ["amber", "aqua", "azure", "beige", "black", "blue",
-                    "brown"]
+                    "brown", "chartreuse", "copper", "cream", "cyan", "fawn",
+                    "fuchsia", "gold", "green", "grey", "hazel", "jade",
+                    "khaki", "lime", "magenta", "maroon", "navy", "ochre",
+                    "olive", "orange", "peach", "pink", "purple", "red",
+                    "silver", "tan", "teal", "turquoise", "violet", "white",
+                    "yellow"]
 
-    instruments_words = ["accordion"]
+    instruments_words = ["accordion", "bagpipes", "banjo", "bass", "bassoon",
+                        "bongos", "cello", "clarinet", "cymbal", "didgeridoo",
+                        "drum", "fiddle", "flute", "glockenspiel", "guitar",
+                        "harmonica", "harp", "keyboard", "lyre" "mandolin",
+                        "marimba", "melodica", "oboe", "ocarina", "organ",
+                        "piano", "recorder", "saxophone", "sitar",
+                        "synthesizer", "tambourine", "triangle", "trombone",
+                        "trumpet", "tuba", "ukulele", "viola", "violin",
+                        "xylophone"]
 
     def __init__(self):
         self.main_menu()
@@ -115,7 +128,7 @@ class Hangman():
     def main_menu(self):
         print("Welcome to Hangman!")
         while True:
-            option = input("Choose an option: [P]lay, [R]ules,\
+            option = input("Choose an option: [P]lay, [R]ules, \
 [S]tats or [Q]uit ").upper()
             if option == "P":
                 self.theme_select()
@@ -129,7 +142,7 @@ class Hangman():
                 print("Please select a valid option.")
 
     def theme_select(self):
-        level = input("Choose a theme: [A]nimals, [F]oods,\
+        level = input("Choose a theme: [A]nimals, [F]oods, \
 [C]olours, [I]nstruments ").upper()
         if level == "A":
             self.game_loop("animals")
@@ -141,7 +154,14 @@ class Hangman():
             self.game_loop("instruments")
 
     def show_rules(self):
-        print("Insert rules of hangman here")
+        print("You start the game with 8 lives, and must guess a word.")
+        print("You must guess a letter on each turn, if it is correct, every")
+        print("occurrence of the letter in the word will appear. Otherwise,")
+        print("you will lose a life. If you guess the same letter twice, or")
+        print("guess an invalid letter, you will be prompted to try again,")
+        print("but won't lose a life. If you run out of lives, you lose the")
+        print("game. If you guess the full word, you win. In either case,")
+        print("you have the option to play again or return to the main menu")
 
     def show_stats(self):
         wins = GameData.wins
