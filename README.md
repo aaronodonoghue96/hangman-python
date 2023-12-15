@@ -6,7 +6,7 @@ The player must guess letters in an attempt to discover a hidden word. For each 
 
 This project was created as the third Project Portfolio project for the Code Institute Diploma in Full Stack Software Development, to demonstrate the usage of Python by building a command-line application that interacts with a data model (in this case the GameData class, which stores data on the currently chosen word, progress in the game, number of lives remaining, and previous wins and losses), and queries and manipulates data from that model (e.g. adding guesses from the player, thus increasing the progress or losing a life, requesting the letters revealed so far, the guessed letters and the number of lives to display to the player).
 
-In addition to being a solution to this assignment, the game of hangman, which this project implements in the form of a terminal game, is a popular game among a wide range of audiences. Hangman is a popular alphabetic guessing game in schools, and is also used among non-native English speakers as a way of practicing spelling of new words when learning English, making the game both a fun guessing game, as well as an educational tool for spelling. Hangman has even made its way into the world of TV, with the popular American game show "Wheel of Fortune" being inspired by hangman, with the same premise of guessing letters to spell out a word or phrase, in this case with a specific theme given for the word/phrase to be guessed.
+In addition to being a solution to this assignment, the game of hangman, which this project implements in the form of a terminal game, is a popular game among a wide range of audiences. Hangman is a popular alphabetic guessing game in schools, and is also used among non-native English speakers as a way of practicing spelling of new words when learning English, making the game both a fun guessing game, as well as an educational tool for spelling and learning vocabulary. Hangman has even made its way into the world of TV, with the popular American game show "Wheel of Fortune" being inspired by hangman, with the same premise of guessing letters to spell out a word or phrase, in this case with a specific theme given for the word/phrase to be guessed.
 
 ## Table of Contents
 
@@ -17,9 +17,23 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ### User Stories
 
+### Design
+
 ## Features
 
 ### Theme Selection
+
+### Rules
+
+### Stats
+
+### Lives Display
+
+### Word Progress Display
+
+### Guessed Letters Display
+
+### Future Features
 
 ## Technologies Used
 
@@ -61,3 +75,5 @@ In the stats menu:
 ## Deployment
 
 ## Credits
+The template used to create this project is from Code Institute.
+All code added to the file "run.py" for this project, and all content in this Readme file, both of those are entirely of my own creation.
