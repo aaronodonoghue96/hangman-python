@@ -142,7 +142,8 @@ class Hangman():
         while True:
             # Select an option by entering the first letter. Invalid
             # letters will result in a prompt to choose a valid option
-            option = input(option_text).upper()
+            option = input(option_text)
+            option = option.upper()
             if option == "P":
                 self.theme_select()
             elif option == "R":
@@ -161,7 +162,8 @@ class Hangman():
     def theme_select(self):
         level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, "
         level_text_contd = "[I]nstruments, or choose [X] to go back "
-        level = input(level_text + level_text_contd).upper()
+        level = input(level_text + level_text_contd)
+        level = level.upper()
         if level == "A":
             self.game_loop("animals")
         elif level == "F":
