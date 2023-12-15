@@ -137,12 +137,12 @@ class Hangman():
 
     # Load up the main menu of the game with the four initial options
     def main_menu(self):
+        option_text = "Choose an option: [P]lay, [R]ules, [S]tats or [Q]uit "
         print("Welcome to Hangman!")
         while True:
             # Select an option by entering the first letter. Invalid
             # letters will result in a prompt to choose a valid option
-            option = input("Choose an option: [P]lay, [R]ules, \
-[S]tats or [Q]uit ").upper()
+            option = input(option_text).upper()
             if option == "P":
                 self.theme_select()
             elif option == "R":
@@ -159,8 +159,9 @@ class Hangman():
     # of the use of X as a "cancel" symbol, and b. It is highly unlikely to
     # clash with the initial of any future category
     def theme_select(self):
-        level = input("Choose a theme: [A]nimals, [F]oods, [C]olours, \
-[I]nstruments, or choose [X] to go back ").upper()
+        level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, " +
+        "[I]nstruments, or choose [X] to go back "
+        level = input(level_text).upper()
         if level == "A":
             self.game_loop("animals")
         elif level == "F":
