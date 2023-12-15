@@ -19,8 +19,7 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ## Features
 
-### Difficulty Levels
-The four difficulty levels available in this game are to accommodate different skill levels, and offer an extra challenge to those who have mastered the strategy of playing hangman. In the easier words, there is more use of letters that are most common in English, such as A, E, I, N, O, R, S and T. In the harder words, there is less use of common vowels like A and E, more use of U and Y as vowels, repeated letters (thus reducing the amount of possible correct guesses), and other rare letters like X and Z, to make guessing more challenging.
+### Theme Selection
 
 ## Technologies Used
 
@@ -39,17 +38,17 @@ Running out of lives results in a loss and tells you what the word was
 Both winning and losing allow you play again
 Selecting yes takes you back to the start of the game with a new randomized word
 Selecting no takes you back to the main menu
-In the main menu and difficulty selection menu, all options are case insensitive
+In the main menu and theme selection menu, all options are case insensitive
 In the main menu:
- - Selecting P for Play will take you to the difficulty selection menu to choose what level you want to play
+ - Selecting P for Play will take you to the theme selection menu to choose what level you want to play
  - Selecting R for Rules will show you the rules of the game
  - Selecting S for Stats will show you your stats, i.e. your total wins, total losses, current win streak, and win ratio
  - Selecting Q for Quit will end the game
-In the difficulty selection menu:
- - Selecting E for Easy will select a word from the easy word list
- - Selecting M for Medium will select a word from the medium word list
- - Selecting H for Hard will select a word from the hard word list
- - Selecting I for Impossible will select a word from the impossible word list
+In the theme selection menu:
+ - Selecting A for Animals will select a word from the animals word list
+ - Selecting F for Food will select a word from the food word list
+ - Selecting C for Colours will select a word from the colours word list
+ - Selecting I for Instruments will select a word from the instruments word list
 In the stats menu:
  - If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio)
 
