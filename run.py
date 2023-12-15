@@ -79,45 +79,25 @@ class GameData():
 
 class Hangman():
 
-    # Easy words have a lot of the most common letters in English,
-    # such as A, E, I, N, O, R, S, and T.
-    easy_words = ["answer", "artist", "blaster", "brain", "coaster",
-                  "creation", "detain", "drained", "eateries", "eastern",
-                  "enter", "falter", "feature", "grains", "greatest",
-                  "heater", "honest", "interest", "latest", "leanest",
-                  "litter", "master", "minor", "nearest", "notes",
-                  "orange", "painter", "points", "rain", "relation",
-                  "release", "roasted", "satin", "seat", "snare",
-                  "stairs", "strain", "tanner", "trainer", "unease",
-                  "user", "various", "vines", "water", "winter", "years"]
+    animals_words = ["alligator", "armadillo", "badger", "bear", "beetle",
+                    "bird", "cat", "cobra", "cow", "dog", "elephant", "ferret",
+                    "fish", "fox", "goat", "horse", "jellyfish", "koala",
+                    "lemur", "monkey", "ostrich", "pig", "rabbit", "raccoon",
+                    "rhino", "shark", "sheep", "snake", "squid", "squirrel",
+                    "tiger", "vole", "vulture", "walrus", "whale", "zebra"]
 
-    # Medium words use slightly less common letters a bit more often,
-    # and are missing some of the more common letters
-    medium_words = ["allowed", "apricot", "archer", "austere", "carrot",
-                    "dragon", "floating", "fraction", "pressure", "search",
-                    "status", "target", "union"]
+    food_words = ["apple", "apricot", "bacon", "banana", "blackberry",
+                 "blueberry", "bread", "cake", "carrot", "cheese", "chicken",
+                 "chocolate", "cookie", "croissant", "donut", "egg", "fish",
+                 "grapes", "ice cream", "jelly", "lemon", "lime", "mango",
+                 "meat", "orange", "peach", "pear", "pickle", "pizza",
+                 "radish", "sandwich", "sausage", "steak", "tomato",
+                 "vegetable", "watermelon"]
 
-    # Hard words use more uncommon letters more often than the previous
-    # categories
-    hard_words = ["afford", "freeze", "major"]
+    colours_words = ["amber", "aqua", "azure", "beige", "black", "blue",
+                    "brown"]
 
-    # Impossible words have a lot of rare letters like J, Q, X and Z,
-    # few vowels or Y as a vowel, unusual or long consonant sequences,
-    # or few distinct letters meaning fewer chances to guess right
-    impossible_words = ["absurd", "avenue", "bagpipes", "blizzard", "buffalo",
-                 "cryptic", "dizzy", "duplex", "embezzle", "equip",
-                 "faking", "fixable", "fjord", "flapjack", "galaxy",
-                 "galvanize", "gizmo", "hazard", "hyphen", "icebox",
-                 "injury", "jackpot", "jaywalking", "jigsaw", "joking",
-                 "jukebox", "keyhole", "kiosk", "lengths", "luxury",
-                 "matrix", "megahertz", "microwave", "mystery", "nightclub",
-                 "onyx", "oxidize", "oxygen", "polka", "psychic",
-                 "puzzle", "quartz", "quizzical", "rhubarb", "rickshaw",
-                 "scratch", "skiving", "snazzy", "sphinx", "stretch",
-                 "subway", "swivel", "syndrome", "topaz", "transgress",
-                 "transplant", "twelfth", "unknown", "uptown", "vixen",
-                 "vortex", "waltz", "wizard", "zephyr", "zigzag",
-                 "zodiac", "zombie"]
+    instruments_words = ["accordion"]
 
     def __init__(self):
         self.main_menu()
@@ -128,7 +108,7 @@ class Hangman():
             option = input("Choose an option: [P]lay, [R]ules,\
 [S]tats or [Q]uit ").upper()
             if option == "P":
-                self.difficulty_select()
+                self.theme_select()
             elif option == "R":
                 self.show_rules()
             elif option == "S":
@@ -138,17 +118,17 @@ class Hangman():
             else:
                 print("Please select a valid option.")
 
-    def difficulty_select(self):
-        level = input("Choose a level: [E]asy, [M]edium,\
-[H]ard, [I]mpossible ").upper()
-        if level == "E":
-            self.game_loop("easy")
-        elif level == "M":
-            self.game_loop("medium")
-        elif level == "H":
-            self.game_loop("hard")
+    def theme_select(self):
+        level = input("Choose a theme: [A]nimals, [F]oods,\
+[C]olours, [I]nstruments ").upper()
+        if level == "A":
+            self.game_loop("animals")
+        elif level == "F":
+            self.game_loop("foods")
+        elif level == "C":
+            self.game_loop("colours")
         elif level == "I":
-            self.game_loop("impossible")
+            self.game_loop("instruments")
 
     def show_rules(self):
         print("Insert rules of hangman here")
@@ -158,31 +138,31 @@ class Hangman():
         losses = GameData.losses
         win_streak = GameData.win_streak
         win_ratio = 0 # will stay at 0 if there are no games played
-        
+
         try:
             win_ratio = (wins / (wins + losses)) * 100
         except ZeroDivisionError:
             print("No games were played yet so there are no games won")
-            
+
         print(f"Wins: {wins}, Losses: {losses}, Win Streak: {win_streak}, \
 Win Ratio: {win_ratio}")
 
-    def populate_wordlist(self, difficulty):
-        if difficulty == "easy":
-            return self.easy_words
-        elif difficulty == "medium":
+    def populate_wordlist(self, theme):
+        if theme == "animals":
+            return self.animals_words
+        elif theme == "medium":
             return self.medium_words
-        elif difficulty == "hard":
-            return self.hard_words
-        elif difficulty == "impossible":
-            return self.impossible_words
+        elif theme == "colours":
+            return self.colours_words
+        elif theme == "instruments":
+            return self.instruments_words
 
-    def game_loop(self, difficulty):
+    def game_loop(self, theme):
         replay = True
 
         while replay is True:
             # List of words to choose from for the game
-            words = self.populate_wordlist(difficulty)
+            words = self.populate_wordlist(theme)
 
             # Pick a word at random from the list
             chosen_word = choice(words)
