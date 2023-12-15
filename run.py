@@ -76,6 +76,16 @@ class GameData():
     def validate_duplicate(self, guess):
         return guess not in self.guessed
 
+    def win(self):
+        print(f"You win! The word was {self.answer}")
+        GameData.wins += 1
+        GameData.win_streak += 1
+
+    def game_over(self):
+        print(f"Game Over. The word was {self.answer}")
+        GameData.losses += 1
+        GameData.win_streak = 0
+
 
 class Hangman():
 
@@ -181,24 +191,14 @@ Win Ratio: {win_ratio}")
                 game_data.add_guess(letter)
 
                 if game_data.show_word_progress() == game_data.answer:
-                    self.win(game_data)
+                    game_data.win()
                     break
 
                 if game_data.lives == 0:
-                    self.game_over(game_data)
+                    game_data.game_over()
                     break
 
             replay = self.play_again()
-
-    def win(self, game_data):
-        print(f"You win! The word was {game_data.answer}")
-        GameData.wins += 1
-        GameData.win_streak += 1
-
-    def game_over(self, game_data):
-        print(f"Game Over. The word was {game_data.answer}")
-        GameData.losses += 1
-        GameData.win_streak = 0
 
     def play_again(self):
         play_again_choice = ""
