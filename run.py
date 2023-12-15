@@ -159,9 +159,9 @@ class Hangman():
     # of the use of X as a "cancel" symbol, and b. It is highly unlikely to
     # clash with the initial of any future category
     def theme_select(self):
-        level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, " +
-        "[I]nstruments, or choose [X] to go back "
-        level = input(level_text).upper()
+        level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, "
+        level_text_contd = "[I]nstruments, or choose [X] to go back "
+        level = input(level_text + level_text_contd).upper()
         if level == "A":
             self.game_loop("animals")
         elif level == "F":
