@@ -71,30 +71,31 @@ The user can select from one of four themes, animals, foods, colours and instrum
 
 ### Manual Testing
 Tested:
-Guessing letters is case-insensitive, all guesses will automatically be made lowercase in the code
-Guessing right reveals a letter
-Guessing wrong removes 1 life and shows no new letters
-Guessing the same letter twice alerts the user, asks them to choose again, doesn't remove a life
-Guessing a non-letter, i.e. numbers, punctuation, other symbols like &, $ or %, alerts the user, asks them to choose again, doesn't remove a life
-Guessing a non-English letter like "é" or "ó" alerts the user, asks them to choose again, doesn't remove a life
-Guessing all letters of the word results in a win and tells you what the word is
-Running out of lives results in a loss and tells you what the word was
-Both winning and losing allow you play again
-Selecting yes takes you back to the start of the game with a new randomized word
-Selecting no takes you back to the main menu
-In the main menu and theme selection menu, all options are case insensitive
-In the main menu:
- - Selecting P for Play will take you to the theme selection menu to choose what level you want to play
- - Selecting R for Rules will show you the rules of the game
- - Selecting S for Stats will show you your stats, i.e. your total wins, total losses, current win streak, and win ratio
- - Selecting Q for Quit will end the game
+- Guessing letters is case-insensitive, all guesses will automatically be made lowercase in the code.
+- Guessing right reveals a letter.
+- Guessing wrong removes 1 life and shows no new letters.
+- Guessing the same letter twice alerts the user, asks them to choose again, doesn't remove a life.
+- Guessing a non-letter, i.e. numbers, punctuation, other symbols like &, $ or %, alerts the user, asks them to choose again, doesn't remove a life.
+- Guessing a non-English letter like "é" or "ó" alerts the user, asks them to choose again, doesn't remove a life.
+- Guessing all letters of the word results in a win and tells you what the word is.
+- Running out of lives results in a loss and tells you what the word was.
+- Both winning and losing allow you play again.
+- Selecting yes takes you back to the start of the game with a new randomized word.
+- Selecting no takes you back to the main menu.
+- Selecting an invalid option will prompt you for a yes/no response.
+- In the main menu and theme selection menu, all options are case insensitive.
+- In the main menu:
+ - Selecting P for Play will take you to the theme selection menu to choose what level you want to play.
+ - Selecting R for Rules will show you the rules of the game.
+ - Selecting S for Stats will show you your stats, i.e. your total wins, total losses, current win streak, and win ratio.
+ - Selecting Q for Quit will end the game.
 In the theme selection menu:
- - Selecting A for Animals will select a word from the animals word list
- - Selecting F for Food will select a word from the food word list
- - Selecting C for Colours will select a word from the colours word list
- - Selecting I for Instruments will select a word from the instruments word list
+ - Selecting A for Animals will select a word from the animals word list.
+ - Selecting F for Food will select a word from the food word list.
+ - Selecting C for Colours will select a word from the colours word list.
+ - Selecting I for Instruments will select a word from the instruments word list.
 In the stats menu:
- - If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio)
+ - If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio).
 
 ### Fixed Bugs
 - The wins, losses, win streak and win ratio were not displaying correctly, all displaying as 0 even after playing multiple games. This was because the class variables were not being accessed correctly (using instance variable instead of class name). This is now fixed, and the numbers are all displaying correctly.
@@ -127,5 +128,5 @@ If there are any config variables required for the app, add these in the Config 
 Go back to the Deploy tab, and click either Enable Automatic Deploys, or Deploy Branch if you want to deploy manually. Once the branch is successfully deployed, you can click View App at the bottom, or Open App at the top, and either of those will open up the Python hangman app in a new tab.
 
 ## Credits
-The template used to create this project is from Code Institute.
+The template used to create this project is from Code Institute, all files except for run.py and README.md are made entirely of content from Code Institute.
 All code added to the file "run.py" for this project, and all content in this Readme file, both of those are entirely of my own creation.
