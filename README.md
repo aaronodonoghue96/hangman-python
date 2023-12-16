@@ -62,7 +62,7 @@ In addition to being a solution to this assignment, the game of hangman, which t
 | As a user, I want to see any letters I have guessed correctly display in the word. | The user is shown all correctly guessed letters in the word so far at each turn. |
 | As a user, I want to know when I have won the game. | The user is shown a message to indicate they have won upon guessing the full word. |
 | As a user, I want to know when I have lost the game. | The user is shown a message to indicate they have lost upon losing their last life. |
-| As a user, I want to have the option to play again after winning or losing without starting the application again. | The user is given the option to play again after each game ends, returning to the theme selection screen in case they want to choose a different theme this time. |
+| As a user, I want to have the option to play again after winning or losing without starting the application again. | The user is given the option to play again after each game ends, returning to the theme selection screen in case they want to choose a different theme this time. If they decide not to play again, they are taken back to the main menu instead. |
 | As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio. | The user is able to view their stats from the main menu by entering S. |
 
 ### Design
@@ -109,9 +109,13 @@ The user is shown how much of the word they have filled in, and how much of the 
 
 The user is shown which letters they have already guessed before every turn.
 
+### Play Again
+
+The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead.
+
 ### Validation
 
-The user's choices are validated at several points in the game. All menus have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all).
+The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all).
 
 ### Future Features
 
