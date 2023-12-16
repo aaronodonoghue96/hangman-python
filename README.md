@@ -75,7 +75,7 @@ The user is shown which letters they have already guessed before every turn.
 
 ### Validation
 
-The user's choices are validated at several points in the game. All menus have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option.
+The user's choices are validated at several points in the game. All menus have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all).
 
 ### Future Features
 
