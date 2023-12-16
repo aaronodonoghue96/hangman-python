@@ -44,6 +44,9 @@ class GameData():
         if not self.validate_empty(guess):
             print("Please enter a letter.")
             valid = False
+        elif not self.validate_one(guess):
+            print("Please enter one letter at a time.")
+            valid = False
         elif not self.validate_letter(guess):
             print(f"{guess} is not a letter.")
             print("Please choose a letter in the English alphabet.")
@@ -67,6 +70,10 @@ class GameData():
     # Validation against empty input such as whitespace or nothing at all
     def validate_empty(self, guess):
         return len(guess) != 0
+
+    # Validation against guessing multiple letters at once
+    def validate_one(self, guess):
+        return len(guess) == 1
 
     # Validation against numbers, punctuation, other non-alpha characters
     def validate_letter(self, guess):
