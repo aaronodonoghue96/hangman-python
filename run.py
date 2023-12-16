@@ -163,6 +163,7 @@ class Hangman():
                 break
             else:
                 print("Please select a valid option.")
+        return
 
     # Give the user a selection of themes to choose from, and the option
     # to go back. X is chosen as the "go back" letter as a. It is reminiscent
@@ -170,7 +171,7 @@ class Hangman():
     # clash with the initial of any future category
     def theme_select(self):
         level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, "
-        level_text_contd = "[I]nstruments,\n or choose [X] to go back\n"
+        level_text_contd = "[I]nstruments, or [X] to go back\n"
         while True:
             level = input(level_text + level_text_contd)
             level = level.upper()
