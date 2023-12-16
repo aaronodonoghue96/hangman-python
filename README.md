@@ -3,7 +3,30 @@
 Hangman is a terminal game written in Python, and it runs in the Code Institute mock terminal on Heroku.
 
 ## Table of Contents
-
+- [How To Play](#how-to-play)
+- [User Experience](#user-experience)
+ - [Project Goals](#project-goals)
+ - [User Stories](#user-stories)
+- [Features](#features)
+ - [Main Menu](#main-menu)
+ - [Theme Selection](#theme-selection)
+ - [Back](#back)
+ - [Rules](#rules)
+ - [Stats](#stats)
+ - [Quit](#quit)
+ - [Timer](#timer)
+ - [Lives Display](#lives-display)
+ - [Word Progress Display](#word-progress-display)
+ - [Guessed Letters Display](#guessed-letters-display)
+ - [Validation](#validation)
+ - [Future Features](#future-features)  
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+ - [Manual Testing](#manual-testing)
+ - [Fixed Bugs](#fixed-bugs)
+ - [Unfixed Bugs](#unfixed-bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 ## How To Play
 
@@ -33,13 +56,15 @@ In addition to being a solution to this assignment, the game of hangman, which t
 - As a user, I want to have the option to play again after winning or losing without starting the application again.
 - As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio.
 
-### Design
-
-Flowchart will go here
-
 ## Features
 
 Screenshots of each feature to show project outcomes will go here
+
+Flowchart will go here
+
+### Main Menu
+
+The user sees the main menu upon starting the application, and from there, has the options to play, see the rules, see their stats, or quit.
 
 ### Theme Selection
 
@@ -103,6 +128,7 @@ In future versions of this application, I would like to add:
 ## Testing
 
 ### Manual Testing
+
 Tested:
 - Guessing letters is case-insensitive, all guesses will automatically be made lowercase in the code.
 - Guessing right reveals a letter.
@@ -131,9 +157,11 @@ In the stats menu:
  - If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio).
 
 ### Fixed Bugs
+
 - The wins, losses, win streak and win ratio were not displaying correctly, all displaying as 0 even after playing multiple games. This was because the class variables were not being accessed correctly (using instance variable instead of class name). This is now fixed, and the numbers are all displaying correctly.
 
 ### Unfixed Bugs
+
 - No unfixed bugs have been found to remain in this project.
 
 ## Deployment
@@ -161,5 +189,6 @@ If there are any config variables required for the app, add these in the Config 
 Go back to the Deploy tab, and click either Enable Automatic Deploys, or Deploy Branch if you want to deploy manually. Once the branch is successfully deployed, you can click View App at the bottom, or Open App at the top, and either of those will open up the Python hangman app in a new tab.
 
 ## Credits
+
 The template used to create this project is from Code Institute, all files except for run.py and README.md are made entirely of content from Code Institute.
 All code added to the file "run.py" for this project, and all content in this Readme file, both of those are entirely of my own creation.
