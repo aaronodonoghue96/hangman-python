@@ -91,11 +91,15 @@ The user can go back to the main menu if they are in the theme selection menu by
 
 ### Rules
 
+![Rules Screen](assets/screenshots/rules_screen.png)
 The user can view the rules of the game from the main menu by pressing R and Enter.
 
 ### Stats
 
-The user can view their stats, i.e. wins, losses, current winning streak, and win ratio, from the main menu by pressing S and Enter.
+![Winning Streak of 4](assets/screenshots/win_streak.png)
+![Stats Screen after zero games](assets/screenshots/zero_stats_screen.png)
+![Stats Screen](assets/screenshots/stats_screen.png)
+The user can view their stats, i.e. wins, losses, current winning streak, and win ratio, from the main menu by pressing S and Enter. If the user has not played any games yet, the win ratio will be 0 (to avoid a division by zero error), and the user will be told that because no games have been played, no games have been won yet.
 
 ### Quit
 
