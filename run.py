@@ -1,6 +1,7 @@
 from random import choice
 # This library is needed to choose a random word from the chosen theme
 
+
 class GameData():
 
     # Alphabet for checking inputs against to ensure they are English letters
@@ -96,40 +97,41 @@ class Hangman():
 
     # A list of animal names for the animals theme
     animals_words = ["alligator", "armadillo", "badger", "bear", "beetle",
-                    "bird", "cat", "cobra", "cow", "dog", "elephant", "ferret",
-                    "fish", "fox", "goat", "horse", "jellyfish", "koala",
-                    "lemur", "monkey", "ostrich", "pig", "rabbit", "raccoon",
-                    "rhino", "shark", "sheep", "snake", "squid", "squirrel",
-                    "tiger", "vole", "vulture", "walrus", "whale", "zebra"]
+                     "bird", "cat", "cobra", "cow", "dog", "elephant",
+                     "ferret", "fish", "fox", "goat", "horse", "jellyfish",
+                     "koala", "lemur", "monkey", "ostrich", "pig", "rabbit",
+                     "raccoon", "rhino", "shark", "sheep", "snake", "squid",
+                     "squirrel", "tiger", "vole", "vulture", "walrus",
+                     "whale", "zebra"]
 
     # A list of food names for the food theme
     food_words = ["apple", "apricot", "bacon", "banana", "blackberry",
-                 "blueberry", "bread", "burger", "cake", "carrot", "cheese",
-                 "chicken", "chocolate", "cookie", "croissant", "donut",
-                 "egg", "fish", "grapes", "honey", "jelly", "lemon",
-                 "lime", "mango", "meat", "orange", "peach", "pear", "pickle",
-                 "pizza", "radish", "sandwich", "sausage", "steak", "tomato",
-                 "vegetable", "watermelon"]
+                  "blueberry", "bread", "burger", "cake", "carrot", "cheese",
+                  "chicken", "chocolate", "cookie", "croissant", "donut",
+                  "egg", "fish", "grapes", "honey", "jelly", "lemon", "lime",
+                  "mango", "meat", "orange", "peach", "pear", "pickle",
+                  "pizza", "radish", "sandwich", "sausage", "steak", "tomato",
+                  "vegetable", "watermelon"]
 
     # A list of colour names for the colours theme
     colours_words = ["amber", "aqua", "azure", "beige", "black", "blue",
-                    "brown", "chartreuse", "copper", "cream", "cyan", "fawn",
-                    "fuchsia", "gold", "green", "grey", "hazel", "jade",
-                    "khaki", "lime", "magenta", "maroon", "navy", "ochre",
-                    "olive", "orange", "peach", "pink", "purple", "red",
-                    "silver", "tan", "teal", "turquoise", "violet", "white",
-                    "yellow"]
+                     "brown", "chartreuse", "copper", "cream", "cyan", "fawn",
+                     "fuchsia", "gold", "green", "grey", "hazel", "jade",
+                     "khaki", "lime", "magenta", "maroon", "navy", "ochre",
+                     "olive", "orange", "peach", "pink", "purple", "red",
+                     "silver", "tan", "teal", "turquoise", "violet", "white",
+                     "yellow"]
 
     # A list of musical instrument names for the instruments theme
     instruments_words = ["accordion", "bagpipes", "banjo", "bass", "bassoon",
-                        "bongos", "cello", "clarinet", "cymbal", "didgeridoo",
-                        "drum", "fiddle", "flute", "glockenspiel", "guitar",
-                        "harmonica", "harp", "keyboard", "lyre" "mandolin",
-                        "marimba", "melodica", "oboe", "ocarina", "organ",
-                        "piano", "recorder", "saxophone", "sitar",
-                        "synthesizer", "tambourine", "triangle", "trombone",
-                        "trumpet", "tuba", "ukulele", "viola", "violin",
-                        "xylophone", "zither"]
+                         "bongos", "cello", "clarinet", "cymbal", "didgeridoo",
+                         "drum", "fiddle", "flute", "glockenspiel", "guitar",
+                         "harmonica", "harp", "keyboard", "lyre" "mandolin",
+                         "marimba", "melodica", "oboe", "ocarina", "organ",
+                         "piano", "recorder", "saxophone", "sitar",
+                         "synthesizer", "tambourine", "triangle", "trombone",
+                         "trumpet", "tuba", "ukulele", "viola", "violin",
+                         "xylophone", "zither"]
 
     # Upon starting the application, load the main menu
     def __init__(self):
@@ -150,7 +152,7 @@ class Hangman():
                 self.show_rules()
             elif option == "S":
                 self.show_stats()
-            elif option == "Q": # Quitting will end the program
+            elif option == "Q":  # Quitting will end the program
                 break
             else:
                 print("Please select a valid option.")
@@ -197,7 +199,7 @@ class Hangman():
         wins = GameData.wins
         losses = GameData.losses
         win_streak = GameData.win_streak
-        win_ratio = 0 # will stay at 0 if there are no games played
+        win_ratio = 0  # will stay at 0 if there are no games played
 
         try:
             win_ratio = (wins / (wins + losses)) * 100
@@ -271,6 +273,7 @@ Win Ratio: {win_ratio}")
                 return True
             else:
                 print("Please select y for yes or n for no")
+
 
 # Create a Hangman object, starting the game
 Hangman()
