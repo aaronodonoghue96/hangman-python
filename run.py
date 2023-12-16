@@ -210,8 +210,8 @@ Win Ratio: {win_ratio}")
     def populate_wordlist(self, theme):
         if theme == "animals":
             return self.animals_words
-        elif theme == "medium":
-            return self.medium_words
+        elif theme == "food":
+            return self.food_words
         elif theme == "colours":
             return self.colours_words
         elif theme == "instruments":
