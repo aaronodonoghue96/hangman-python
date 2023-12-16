@@ -59,11 +59,13 @@ In addition to being a solution to this assignment, the game of hangman, which t
 | As a user, I want to have the option to play again after winning or losing without starting the application again. | The user is given the option to play again after each game ends, returning to the theme selection screen in case they want to choose a different theme this time. |
 | As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio. | The user is able to view their stats from the main menu by entering S. |
 
+### Design
+
+Flowchart will go here
+
 ## Features
 
 Screenshots of each feature to show project outcomes will go here
-
-Flowchart will go here
 
 ### Main Menu
 
@@ -158,6 +160,11 @@ In the theme selection menu:
  - Selecting I for Instruments will select a word from the instruments word list.
 In the stats menu:
  - If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio).
+
+### Validator Testing
+
+- PEP8
+   - I validated the entire contents of run.py on https://pep8ci.herokuapp.com/ and no errors were found.
 
 ### Fixed Bugs
 

@@ -182,7 +182,7 @@ class Hangman():
 
     # Display the rules of the game to the player
     def show_rules(self):
-        print("----------RULES----------")
+        print("----------------------------RULES----------------------------")
         print("You start the game with 8 lives, and must guess a word.")
         print("You must guess a letter on each turn, if it is correct, every")
         print("occurrence of the letter in the word will appear. Otherwise,")
@@ -191,7 +191,7 @@ class Hangman():
         print("but won't lose a life. If you run out of lives, you lose the")
         print("game. If you guess the full word, you win. In either case,")
         print("you have the option to play again or return to the main menu")
-        print("--------------------")
+        print("-------------------------------------------------------------")
 
     # Display the stats to the player on how many wins and losses they have
     # their current win streak, and win ratio
