@@ -39,6 +39,8 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ### Theme Selection
 
+The user can select from one of four themes, animals, foods, colours and instruments. Each of these options will start the game with a word related to one of those categories from the corresponding word list.
+
 ### Rules
 
 ### Stats
