@@ -81,10 +81,12 @@ The user sees the main menu upon starting the application, and from there, has t
 
 ### Theme Selection
 
+![Theme Selection Screen](assets/screenshots/theme_selection_screen.png)
 Once the user has selected Play from the main menu by entering P and pressing Enter, they can select from one of four themes, animals, foods, colours and instruments by entering the first letter of the category followed by Enter. Each of these options will start the game with a word related to one of those categories from the corresponding word list.
 
 ### Back
 
+![Back](assets/screenshots/back.png)
 The user can go back to the main menu if they are in the theme selection menu by pressing X and Enter.
 
 ### Rules
