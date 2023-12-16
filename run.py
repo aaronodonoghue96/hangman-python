@@ -167,7 +167,7 @@ class Hangman():
         if level == "A":
             self.game_loop("animals")
         elif level == "F":
-            self.game_loop("foods")
+            self.game_loop("food")
         elif level == "C":
             self.game_loop("colours")
         elif level == "I":
