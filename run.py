@@ -172,7 +172,13 @@ class Hangman():
     def theme_select(self):
         level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, "
         level_text_contd = "[I]nstruments, or [X] to go back\n"
-        while True:
+
+        # If the user selects play again at the end of the game, come back
+        # to the theme selection loop to choose the theme for the next game.
+        # If they decide not to play again, break the loop and return to
+        # the main menu
+        replay = True
+        while replay:
             level = input(level_text + level_text_contd)
             level = level.upper()
             if level == "A":
@@ -187,6 +193,13 @@ class Hangman():
                 break
             else:
                 print("Please select a valid option.")
+
+            # After the game loop ends, ask the user if the want to play again
+            # If so, restart the loop so they can choose the theme for the
+            # next game, otherwise, return to the main menu.
+            replay = self.play_again()
+
+        return
 
     # Display the rules of the game to the player
     def show_rules(self):
@@ -230,46 +243,41 @@ Win Ratio: {win_ratio}")
 
     # Start the game with randomized word from a specified theme
     def game_loop(self, theme):
-        replay = True
 
-        # Replay will be false if you decide not to play again at the end
-        while replay is True:
-            # List of words to choose from for the game
-            words = self.populate_wordlist(theme)
+        # List of words to choose from for the game
+        words = self.populate_wordlist(theme)
 
-            # Pick a word at random from the list
-            chosen_word = choice(words)
+        # Pick a word at random from the list
+        chosen_word = choice(words)
 
-            game_data = GameData(chosen_word)
+        game_data = GameData(chosen_word)
 
-            # Provide either the singular "life" or plural "lives"
-            # based on how many lives the player has left
-            life_or_lives = "life" if game_data.lives == 1 else "lives"
+        # Provide either the singular "life" or plural "lives"
+        # based on how many lives the player has left
+        life_or_lives = "life" if game_data.lives == 1 else "lives"
 
-            # While the game is running, display the lives left, guessed
-            # letters, word progress so far, and prompt the user to guess
-            while True:
-                print(f"{game_data.lives} {life_or_lives} remaining")
-                print(f"You have guessed: {game_data.guessed}")
-                print(f"Word: {game_data.show_word_progress()}")
-                letter = input("Guess a letter: ").lower()
-                game_data.add_guess(letter)
+        # While the game is running, display the lives left, guessed
+        # letters, word progress so far, and prompt the user to guess
+        while True:
+            print(f"{game_data.lives} {life_or_lives} remaining")
+            print(f"You have guessed: {game_data.guessed}")
+            print(f"Word: {game_data.show_word_progress()}")
+            letter = input("Guess a letter: ").lower()
+            game_data.add_guess(letter)
 
-                # If the guess completes the word, you have won
-                if game_data.show_word_progress() == game_data.answer:
-                    game_data.win()
-                    break
+            # If the guess completes the word, you have won
+            if game_data.show_word_progress() == game_data.answer:
+                game_data.win()
+                break
 
-                # If the guess costs you your last life, you have lost
-                if game_data.lives == 0:
-                    game_data.game_over()
-                    break
+            # If the guess costs you your last life, you have lost
+            if game_data.lives == 0:
+                game_data.game_over()
+                break
 
-            # If the user wants to play again, restart the loop, if not,
-            # end the loop and return to the main menu
-            replay = self.play_again()
+        return
 
-    # Offer the player the choice to pkay again or not
+    # Offer the player the choice to play again or not
     def play_again(self):
         play_again_choice = ""
 
