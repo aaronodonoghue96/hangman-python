@@ -103,11 +103,14 @@ The user can view their stats, i.e. wins, losses, current winning streak, and wi
 
 ### Quit
 
+![Quit](assets/screenshots/quit.png)
 The user can quit the application by pressing Q and Enter in the main menu.
 
 ### Lives Display
 
-The user is shown the number of lives they have remaining before every turn.
+![Lives counter showing 6 lives remaining](assets/screenshots/lives_remaining.png)
+![Lives counter showing the full 8 lives remaining](assets/screenshots/lives_remaining_full.png)
+The user is shown the number of lives they have remaining before every turn, except when they win or lose, where the win or lose messages respectively are shown instead.
 
 ### Word Progress Display
 
