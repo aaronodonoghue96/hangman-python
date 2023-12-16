@@ -55,7 +55,14 @@ The user can select from one of four themes, animals, foods, colours and instrum
 
 ## Technologies Used
 
-Languages used: Python
+- Languages used:
+ - Python - used to create the hangman game
+- Libraries used:
+ - Random - a Python library used for random number generation and choosing randomly from lists. This library was needed to choose a random word from the word list corresponding to the theme selected by the user to display for the game.
+- Programs used:
+ - Git - used for version control
+ - GitHub - used to store files for project
+ - Heroku - used to deploy project 
 
 ## Testing
 
