@@ -7,6 +7,7 @@ Hangman is a terminal game written in Python, and it runs in the Code Institute 
 - [User Experience](#user-experience)
   - [Project Goals](#project-goals)
   - [User Stories](#user-stories)
+  - [Design](#design)
 - [Features](#features)
   - [Main Menu](#main-menu)
   - [Theme Selection](#theme-selection)
