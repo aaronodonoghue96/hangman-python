@@ -26,6 +26,7 @@ Hangman is a terminal game written in Python, and it runs in the Code Institute 
   - [Validation](#validation)
   - [Future Features](#future-features)  
 - [Technologies Used](#technologies-used)
+- [Data Model](#data-model)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [Validator Testing](#validator-testing)
@@ -75,6 +76,7 @@ Screenshots of each feature to show project outcomes will go here
 
 ### Main Menu
 
+![Main Menu](assets/screenshots/main_menu.png)
 The user sees the main menu upon starting the application, and from there, has the options to play, see the rules, see their stats, or quit.
 
 ### Theme Selection
@@ -103,7 +105,7 @@ The user is shown the number of lives they have remaining before every turn.
 
 ### Word Progress Display
 
-The user is shown how much of the word they have filled in, and how much of the word is left, before every turn.
+The user is shown how much of the word they have filled in, and how much of the word is left, before every turn, except when they win, where the winning message is shown instead (which contains the full word), and when they lose, where the losing message is shown instead (which also contains the full word).
 
 ### Guessed Letters Display
 
@@ -139,6 +141,14 @@ In future versions of this application, I would like to add:
   - Heroku - used to deploy project
 - Other technologies used:
   - JSON - used in the template from Code Institute to pass package, launch and settings data
+
+## Data Model
+
+The data model for this hangman game is the GameData class within run.py. The game creates an instance of that class each time a word is chosen.
+
+The GameData class stores the current word, all valid guesses against it, the number of lives remaining, the word progress so far, and data on total wins, losses and current winning streak.
+
+The GameData class also has methods to add guesses by the user, to show progress made on guessing the word so far, several methods to validate the user's guess, and also methods for handling winning or losing the game.
 
 ## Testing
 
