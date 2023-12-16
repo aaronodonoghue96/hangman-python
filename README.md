@@ -135,31 +135,34 @@ In future versions of this application, I would like to add:
 ### Manual Testing
 
 Tested:
-- Guessing letters is case-insensitive, all guesses will automatically be made lowercase in the code.
-- Guessing right reveals a letter.
-- Guessing wrong removes 1 life and shows no new letters.
-- Guessing the same letter twice alerts the user, asks them to choose again, doesn't remove a life.
-- Guessing a non-letter, i.e. numbers, punctuation, other symbols like &, $ or %, alerts the user, asks them to choose again, doesn't remove a life.
-- Guessing a non-English letter like "é" or "ó" alerts the user, asks them to choose again, doesn't remove a life.
-- Guessing all letters of the word results in a win and tells you what the word is.
-- Running out of lives results in a loss and tells you what the word was.
-- Both winning and losing allow you play again.
-- Selecting yes takes you back to the start of the game with a new randomized word.
-- Selecting no takes you back to the main menu.
-- Selecting an invalid option will prompt you for a yes/no response.
-- In the main menu and theme selection menu, all options are case insensitive.
-- In the main menu:
- - Selecting P for Play will take you to the theme selection menu to choose what level you want to play.
- - Selecting R for Rules will show you the rules of the game.
- - Selecting S for Stats will show you your stats, i.e. your total wins, total losses, current win streak, and win ratio.
- - Selecting Q for Quit will end the game.
-In the theme selection menu:
- - Selecting A for Animals will select a word from the animals word list.
- - Selecting F for Food will select a word from the food word list.
- - Selecting C for Colours will select a word from the colours word list.
- - Selecting I for Instruments will select a word from the instruments word list.
-In the stats menu:
- - If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio).
+
+| User Action | Outcome | Pass/Fail |
+| --- | --- | --- |
+| User enters a capital letter | Guessing letters is case-insensitive, all guesses will automatically be made lowercase in the code. | Pass |
+| User guesses correctly | Guessing right reveals a letter. | Pass |
+| User guesses incorrectly | Guessing wrong removes 1 life and shows no new letters. | Pass |
+| User guesses the same letter twice | Guessing the same letter twice alerts the user, asks them to choose again, doesn't remove a life. | Pass |
+| User guesses a non-letter | Guessing a non-letter, i.e. numbers, punctuation, other symbols like &, $ or %, alerts the user, asks them to choose again, doesn't remove a life. | Pass |
+| User guesses a non-English letter | Guessing a non-English letter like "é" or "ó" alerts the user, asks them to choose again, doesn't remove a life. | Pass |
+| User guesses nothing or whitespace | Guessing nothing, or any amount of whitespace, alerts the user, asking them to enter a letter, doesn't remove a life. | Pass |
+| User guesses a letter but adds whitespace | All whitespace is removed and it is treated as if the user just guessed the letter on its own | Pass |
+| User guesses more than one letter at a time | Guessing more than one letter at a time alerts the user, asking them to enter one letter at a time. | Pass |
+| User finishes the word | Guessing all letters of the word results in a win and tells you what the word is. | Pass |
+| User runs out of lives | Running out of lives results in a loss and tells you what the word was. | Pass |
+| User wins or loses the game | Both winning and losing allow you play again. | Pass |
+| User selects yes for the play again prompt | Selecting yes takes you back to the theme selection screen to choose a theme for the next game. | Pass |
+| User selects no for the play again prompt | Selecting no takes you back to the main menu. | Pass |
+| User enters a value other than Y or N for play again (or no value) | Selecting an invalid option (or no option) will prompt you for a yes/no response. | Pass |
+| User enters a lowercase letter as an option in a menu | In the main menu and theme selection menu, all options are case insensitive, the expected actions will occur regardless of the inputted letter's case. | Pass |
+| User selects P in the main menu | Selecting P for Play will take you to the theme selection menu to choose what level you want to play. | Pass |
+| User selects R in the main menu | Selecting R for Rules will show you the rules of the game. | Pass |
+| User selects S in the main menu | Selecting S for Stats will show you your stats, i.e. your total wins, total losses, current win streak, and win ratio. | Pass |
+| User selects Q in the main menu | Selecting Q for Quit will end the game. | Pass |
+| User selects A in the theme selection menu | Selecting A for Animals will select a word from the animals word list. | Pass |
+| User selects F in the theme selection menu | Selecting F for Food will select a word from the food word list. | Pass |
+| User selects C in the theme selection menu | Selecting C for Colours will select a word from the colours word list. | Pass |
+| User selects I in the theme selection menu | Selecting I for Instruments will select a word from the instruments word list. | Pass |
+| User views Stats before playing any games | If no games have been played, win ratio is 0, and a message is shown to the player to explain they have played no games so there are no wins (this is to avoid division by zero when calculating the ratio). | Pass |
 
 ### Validator Testing
 
