@@ -161,21 +161,22 @@ class Hangman():
     # clash with the initial of any future category
     def theme_select(self):
         level_text = "Choose a theme: [A]nimals, [F]oods, [C]olours, "
-        level_text_contd = "[I]nstruments, or choose [X] to go back\n"
-        level = input(level_text + level_text_contd)
-        level = level.upper()
-        if level == "A":
-            self.game_loop("animals")
-        elif level == "F":
-            self.game_loop("food")
-        elif level == "C":
-            self.game_loop("colours")
-        elif level == "I":
-            self.game_loop("instruments")
-        elif level == "X":
-            self.main_menu()
-        else:
-            print("Please select a valid option.")
+        level_text_contd = "[I]nstruments,\n or choose [X] to go back\n"
+        while True:
+            level = input(level_text + level_text_contd)
+            level = level.upper()
+            if level == "A":
+                self.game_loop("animals")
+            elif level == "F":
+                self.game_loop("food")
+            elif level == "C":
+                self.game_loop("colours")
+            elif level == "I":
+                self.game_loop("instruments")
+            elif level == "X":
+                break
+            else:
+                print("Please select a valid option.")
 
     # Display the rules of the game to the player
     def show_rules(self):

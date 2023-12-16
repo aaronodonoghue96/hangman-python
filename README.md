@@ -42,19 +42,22 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ### User Stories
 
-- As a user, I want it to be clear what this application does.
-- As a user, I want to be able to view the rules of the game.
-- As a user, I want to be able to play the game when I'm ready.
-- As a user, I want to be able to select a theme for the word I must guess.
-- As a user, I want to see how many letters are in the word I must guess.
-- As a user, I want to see how many lives I have in the game.
-- As a user, I want to see if my guess was right or wrong.
-- As a user, I want to see what letters I have already guessed.
-- As a user, I want to see any letters I have guessed correctly display in the word.
-- As a user, I want to know when I have won the game.
-- As a user, I want to know when I have lost the game.
-- As a user, I want to have the option to play again after winning or losing without starting the application again.
-- As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio.
+| User Story | Acceptance Criteria |
+| --- | --- |
+| As a user, I want it to be clear what this application does. | It is immediately evident to the user that the application is a hangman game. |
+| As a user, I want to be able to view the rules of the game. | The user is able to view the rules of the game by entering R at the main menu. |
+| As a user, I want to be able to play the game when I'm ready. | The user is able to play the game by entering P at the main menu. |
+| As a user, I want to be able to select a theme for the word I must guess. | The user is able to select a theme using one of the options provided. |
+| As a user, I want to be able to go back to the main menu from the theme selection screen. | The user is able to return to the main menu by entering X. |
+| As a user, I want to see how many letters are in the word I must guess. | The user is shown the length of the target word in underscores at the start of the game. |
+| As a user, I want to see how many lives I have in the game. | The player is shown how many lives they have at each turn. |
+| As a user, I want to see if my guess was right or wrong. | The user is shown their guess is right by the letter appearing in the word, or wrong by losing a life. |
+| As a user, I want to see what letters I have already guessed. | The user is shown what letters have already been guessed on each turn. |
+| As a user, I want to see any letters I have guessed correctly display in the word. | The user is shown all correctly guessed letters in the word so far at each turn. |
+| As a user, I want to know when I have won the game. | The user is shown a message to indicate they have won upon guessing the full word. |
+| As a user, I want to know when I have lost the game. | The user is shown a message to indicate they have lost upon losing their last life. |
+| As a user, I want to have the option to play again after winning or losing without starting the application again. | The user is given the option to play again after each game ends, returning to the theme selection screen in case they want to choose a different theme this time. |
+| As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio. | The user is able to view their stats from the main menu by entering S. |
 
 ## Features
 
@@ -159,6 +162,7 @@ In the stats menu:
 ### Fixed Bugs
 
 - The wins, losses, win streak and win ratio were not displaying correctly, all displaying as 0 even after playing multiple games. This was because the class variables were not being accessed correctly (using instance variable instead of class name). This is now fixed, and the numbers are all displaying correctly.
+- Selecting an invalid value in the theme selection menu returned the user to the main menu rather than the theme selection menu. This has now been fixed by putting the input and validation into a while loop to keep going until valid input is entered.
 
 ### Unfixed Bugs
 
