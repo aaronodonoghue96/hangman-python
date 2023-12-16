@@ -5,26 +5,27 @@ Hangman is a terminal game written in Python, and it runs in the Code Institute 
 ## Table of Contents
 - [How To Play](#how-to-play)
 - [User Experience](#user-experience)
- - [Project Goals](#project-goals)
- - [User Stories](#user-stories)
+  - [Project Goals](#project-goals)
+  - [User Stories](#user-stories)
 - [Features](#features)
- - [Main Menu](#main-menu)
- - [Theme Selection](#theme-selection)
- - [Back](#back)
- - [Rules](#rules)
- - [Stats](#stats)
- - [Quit](#quit)
- - [Timer](#timer)
- - [Lives Display](#lives-display)
- - [Word Progress Display](#word-progress-display)
- - [Guessed Letters Display](#guessed-letters-display)
- - [Validation](#validation)
- - [Future Features](#future-features)  
+  - [Main Menu](#main-menu)
+  - [Theme Selection](#theme-selection)
+  - [Back](#back)
+  - [Rules](#rules)
+  - [Stats](#stats)
+  - [Quit](#quit)
+  - [Timer](#timer)
+  - [Lives Display](#lives-display)
+  - [Word Progress Display](#word-progress-display)
+  - [Guessed Letters Display](#guessed-letters-display)
+  - [Validation](#validation)
+  - [Future Features](#future-features)  
 - [Technologies Used](#technologies-used)
 - [Testing](#testing)
- - [Manual Testing](#manual-testing)
- - [Fixed Bugs](#fixed-bugs)
- - [Unfixed Bugs](#unfixed-bugs)
+  - [Manual Testing](#manual-testing)
+  - [Validator Testing](#validator-testing)
+  - [Fixed Bugs](#fixed-bugs)
+  - [Unfixed Bugs](#unfixed-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -119,16 +120,16 @@ In future versions of this application, I would like to add:
 ## Technologies Used
 
 - Languages used:
- - Python - used to create the hangman game
- - Node.js - used in the template from Code Institute to create the Python terminal on Heroku
+  - Python - used to create the hangman game
+  - Node.js - used in the template from Code Institute to create the Python terminal on Heroku
 - Libraries used:
- - Random - a Python library used for random number generation and choosing randomly from lists. This library was needed to choose a random word from the word list corresponding to the theme selected by the user to display for the game.
+  - Random - a Python library used for random number generation and choosing randomly from lists. This library was needed to choose a random word from the word list corresponding to the theme selected by the user to display for the game.
 - Programs used:
- - Git - used for version control
- - GitHub - used to store files for project
- - Heroku - used to deploy project
+  - Git - used for version control
+  - GitHub - used to store files for project
+  - Heroku - used to deploy project
 - Other technologies used:
- - JSON - used in the template from Code Institute to pass package, launch and settings data
+  - JSON - used in the template from Code Institute to pass package, launch and settings data
 
 ## Testing
 
