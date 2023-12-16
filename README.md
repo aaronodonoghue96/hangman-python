@@ -35,23 +35,56 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ### Design
 
+Flowchart will go here
+
 ## Features
+
+Screenshots of each feature to show project outcomes will go here
 
 ### Theme Selection
 
-The user can select from one of four themes, animals, foods, colours and instruments. Each of these options will start the game with a word related to one of those categories from the corresponding word list.
+Once the user has selected Play from the main menu by entering P and pressing Enter, they can select from one of four themes, animals, foods, colours and instruments by entering the first letter of the category followed by Enter. Each of these options will start the game with a word related to one of those categories from the corresponding word list.
+
+### Back
+
+The user can go back to the main menu if they are in the theme selection menu by pressing X and Enter.
 
 ### Rules
 
+The user can view the rules of the game from the main menu by pressing R and Enter.
+
 ### Stats
+
+The user can view their stats, i.e. wins, losses, current winning streak, and win ratio, from the main menu by pressing S and Enter.
+
+### Quit
+
+The user can quit the application by pressing Q and Enter in the main menu.
 
 ### Lives Display
 
+The user is shown the number of lives they have remaining before every turn.
+
 ### Word Progress Display
+
+The user is shown how much of the word they have filled in, and how much of the word is left, before every turn.
 
 ### Guessed Letters Display
 
+The user is shown which letters they have already guessed before every turn.
+
+### Validation
+
+The user's choices are validated at several points in the game. All menus have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option.
+
 ### Future Features
+
+In future versions of this application, I would like to add:
+- More themes as options.
+- Difficulty levels for each theme.
+- Multi-word phrases (and thus add logic for dealing with spaces and punctuation like apostrophes when such cases arise)
+- The option for multiplayer.
+- A new game mode based on the gameshow Wheel of Fortune, where rather than lives, the player(s) will instead aim to build up their score by guessing letters, with a randomly chosen number chosen by the wheel on each turn as the value for a correct guess, and correct guesses earning that number of points multiplied by the amount of the letter in the word, and wrong guesses ending the player's turn.
 
 ## Technologies Used
 
