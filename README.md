@@ -2,20 +2,36 @@
 
 Hangman is a terminal game written in Python, and it runs in the Code Institute mock terminal on Heroku.
 
-The player must guess letters in an attempt to discover a hidden word. For each letter they guess correctly, it appears in the word once for every occurrence of that letter. If the letter is not in the word, the player loses one of their lives, and has to guess another letter. The game ends when either the player has guessed the full word, in which case they win, or they run out of lives, in which case they lose.
-
-This project was created as the third Project Portfolio project for the Code Institute Diploma in Full Stack Software Development, to demonstrate the usage of Python by building a command-line application that interacts with a data model (in this case the GameData class, which stores data on the currently chosen word, progress in the game, number of lives remaining, and previous wins and losses), and queries and manipulates data from that model (e.g. adding guesses from the player, thus increasing the progress or losing a life, requesting the letters revealed so far, the guessed letters and the number of lives to display to the player).
-
-In addition to being a solution to this assignment, the game of hangman, which this project implements in the form of a terminal game, is a popular game among a wide range of audiences. Hangman is a popular alphabetic guessing game in schools, and is also used among non-native English speakers as a way of practicing spelling of new words when learning English, making the game both a fun guessing game, as well as an educational tool for spelling and learning vocabulary. Hangman has even made its way into the world of TV, with the popular American game show "Wheel of Fortune" being inspired by hangman, with the same premise of guessing letters to spell out a word or phrase, in this case with a specific theme given for the word/phrase to be guessed.
-
 ## Table of Contents
 
 
 ## How To Play
 
+The player must guess letters in an attempt to discover a hidden word. For each letter they guess correctly, it appears in the word once for every occurrence of that letter. If the letter is not in the word, the player loses one of their lives, and has to guess another letter. The game ends when either the player has guessed the full word, in which case they win, or they run out of lives, in which case they lose.
+
 ## User Experience
 
+### Project Goals
+
+This project was created as the third Project Portfolio project for the Code Institute Diploma in Full Stack Software Development, to demonstrate the usage of Python by building a command-line application that interacts with a data model (in this case the GameData class, which stores data on the currently chosen word, progress in the game, number of lives remaining, and previous wins and losses), and queries and manipulates data from that model (e.g. adding guesses from the player, thus increasing the progress or losing a life, requesting the letters revealed so far, the guessed letters and the number of lives to display to the player).
+
+In addition to being a solution to this assignment, the game of hangman, which this project implements in the form of a terminal game, is a popular game among a wide range of audiences. Hangman is a popular alphabetic guessing game in schools, and is also used among non-native English speakers as a way of practicing spelling of new words when learning English, making the game both a fun guessing game, as well as an educational tool for spelling and learning vocabulary. Hangman has even made its way into the world of TV, with the popular American game show "Wheel of Fortune" being inspired by hangman, with the same premise of guessing letters to spell out a word or phrase, in this case with a specific theme given for the word/phrase to be guessed.
+
 ### User Stories
+
+- As a user, I want it to be clear what this application does.
+- As a user, I want to be able to view the rules of the game.
+- As a user, I want to be able to play the game when I'm ready.
+- As a user, I want to be able to select a theme for the word I must guess.
+- As a user, I want to see how many letters are in the word I must guess.
+- As a user, I want to see how many lives I have in the game.
+- As a user, I want to see if my guess was right or wrong.
+- As a user, I want to see what letters I have already guessed.
+- As a user, I want to see any letters I have guessed correctly display in the word.
+- As a user, I want to know when I have won the game.
+- As a user, I want to know when I have lost the game.
+- As a user, I want to have the option to play again after winning or losing without starting the application again.
+- As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio.
 
 ### Design
 
@@ -36,6 +52,8 @@ In addition to being a solution to this assignment, the game of hangman, which t
 ### Future Features
 
 ## Technologies Used
+
+Languages used: Python
 
 ## Testing
 
