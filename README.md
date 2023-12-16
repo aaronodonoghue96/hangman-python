@@ -57,12 +57,15 @@ The user can select from one of four themes, animals, foods, colours and instrum
 
 - Languages used:
  - Python - used to create the hangman game
+ - Node.js - used in the template from Code Institute to create the Python terminal on Heroku
 - Libraries used:
  - Random - a Python library used for random number generation and choosing randomly from lists. This library was needed to choose a random word from the word list corresponding to the theme selected by the user to display for the game.
 - Programs used:
  - Git - used for version control
  - GitHub - used to store files for project
- - Heroku - used to deploy project 
+ - Heroku - used to deploy project
+- Other technologies used:
+ - JSON - used in the template from Code Institute to pass package, launch and settings data
 
 ## Testing
 
@@ -100,6 +103,28 @@ In the stats menu:
 - No unfixed bugs have been found to remain in this project.
 
 ## Deployment
+
+This site is deployed using Heroku. In order to deploy to Heroku, you will need a Heroku account, a requirements.txt file, and a Procfile.
+
+The requirements.txt file will contain all dependencies required for the project. Since my app only used the Random library, which is built into Python, I did not have any dependencies, and so my requirements.txt file was empty.
+
+The Procfile will tell Heroku which files run the program and how to run it. Because this program uses the Python terminal, which is created using Node.js, the first file that will be run is index.js, to start up the terminal. As a result, the Procfile should have only the text "web: node index.js" in it.
+
+Make sure of the following, so that the deployment will run correctly:
+- Procfile is spelled with a capital P, and has no file extension.
+- There is no blank line at the bottom of the Procfile.
+
+Once that is done, login to Heroku, or create a new account if you don't already have one. Once you have logged in, click the New button in the top-right corner, and select "Create New App".
+
+You will then be asked to name your app, and the name must be unique so you can't use the exact same name as the GitHub repository (I used "pp3-hangman-python" as "hangman-python" was already taken by the GitHub repository). You must then select a region, the available options being United States or Europe. Once you have done both, click "Create App" at the bottom.
+
+You should now have the Deploy tab open, if not, select it. Once you are in the Deploy tab, select GitHub in the "Deployment method" row to deploy from GitHub. In the textbox below, enter the name of the repository you want to connect, click the Search button, and select the repository you want from the results below.
+
+Once the repository is connected, go to the Settings tab, and go to the Buildpacks section. Make sure that there are buildpacks for both Python and Node.js there, and that Python is first. If one or both is missing, add them using the "Add buildpack" button.
+
+If there are any config variables required for the app, add these in the Config Vars section by choosing Reveal Config Vars and then entering the key and value and pressing the Add button for each variable. I did not require any config variables for my application, so I left this empty.
+
+Go back to the Deploy tab, and click either Enable Automatic Deploys, or Deploy Branch if you want to deploy manually. Once the branch is successfully deployed, you can click View App at the bottom, or Open App at the top, and either of those will open up the Python hangman app in a new tab.
 
 ## Credits
 The template used to create this project is from Code Institute.
