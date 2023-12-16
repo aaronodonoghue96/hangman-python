@@ -186,7 +186,7 @@ Once the repository is connected, go to the Settings tab, and go to the Buildpac
 
 If there are any config variables required for the app, add these in the Config Vars section by choosing Reveal Config Vars and then entering the key and value and pressing the Add button for each variable. I did not require any config variables for my application, so I left this empty.
 
-Go back to the Deploy tab, and click either Enable Automatic Deploys, or Deploy Branch if you want to deploy manually. Once the branch is successfully deployed, you can click View App at the bottom, or Open App at the top, and either of those will open up the Python hangman app in a new tab.
+Go back to the Deploy tab, and click either Enable Automatic Deploys, or Deploy Branch if you want to deploy manually. Once the branch is successfully deployed, you can click View at the bottom, or Open App at the top, and either of those will open up the Python hangman app in a new tab.
 
 ## Credits
 
