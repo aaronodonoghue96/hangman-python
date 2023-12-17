@@ -19,7 +19,7 @@ Hangman is a terminal game written in Python, and it runs in the Code Institute 
   - [Rules](#rules)
   - [Stats](#stats)
   - [Quit](#quit)
-  - [Timer](#timer)
+  - [Game Beginning](#game-beginning)
   - [Lives Display](#lives-display)
   - [Word Progress Display](#word-progress-display)
   - [Guessed Letters Display](#guessed-letters-display)
@@ -109,6 +109,9 @@ The user can quit the application by pressing Q and Enter in the main menu.
 ### Game Beginning
 
 ![New Game with Animal Theme](assets/screenshots/play_animal.png)
+![New Game with Colour Theme](assets/screenshots/play_colour.png)
+![New Game with Food Theme](assets/screenshots/play_food.png)
+![New Game with Instrument Theme](assets/screenshots/play_instrument.png)
 The game will begin once the user has selected one of the themes from the theme selection menu, and will randomly choose a word from the corresponding word list, and display the word progress (currently an underscore per letter of the word), the amount of lives, the empty list of guessed letters, and a prompt to guess a letter
 
 ### Lives Display
