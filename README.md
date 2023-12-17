@@ -70,7 +70,14 @@ In addition to being a solution to this assignment, the game of hangman, which t
 
 ### Design
 
-Flowchart will go here
+![Flowchart of the hangman game application](assets/screenshots/flowchart_hangman.png)
+This flowchart shows the logic involved in the project, including the main game logic and navigation between menus and the other options available in them besides the game itself. The main menu offers the options to view the rules, view your stats across previous games (both of which simply display the text and return to the main menu), play the game, or quit (which ends the application).
+
+Choosing Play brings you to the theme selection menu, where one of four possible themes can be chosen, or you can go back to the main menu. Choosing any of the themes will lead to starting the game with a random word from that theme's wordlist.
+
+The player must guess letters, which will either bring them closer to revealing the word if correct, or lose them a life if incorrect, or prompt them for another guess if invalid (including empty values). The game will end if either all the letters are guessed (win) or the player has no lives left (lose).
+
+After the game ends, the player is given the option to play again, which if they accept, brings them to the theme selection menu to choose the theme for the next game, and if they decline, they will be taken to the main menu instead.
 
 ## Features
 
