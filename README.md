@@ -151,6 +151,9 @@ The game will end when the player either wins or loses. Winning the game is achi
 
 ### Play Again
 
+![Play Again - Yes chosen, return to theme selection menu](assets/screenshots/play_again_yes.png)
+![Play Again - No chosen, return to main menu](assets/screenshots/play_again_no.png)
+![Play Again - invalid options chosen, repeat prompt](assets/screenshots/play_again_invalid.png)
 The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead.
 
 ### Future Features
