@@ -1,6 +1,6 @@
-# Hangman
+# Hangman Python
 
-Hangman is a terminal game written in Python, and it runs in the Code Institute mock terminal on Heroku.
+Hangman Python is a terminal game written in Python, and it runs in the Code Institute mock terminal on Heroku.
 
 ![Image of landing page of Python hangman app displayed on a variety of devices](assets/screenshots/landing_screen.png)
 
