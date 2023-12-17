@@ -106,6 +106,11 @@ The user can view their stats, i.e. wins, losses, current winning streak, and wi
 ![Quit](assets/screenshots/quit.png)
 The user can quit the application by pressing Q and Enter in the main menu.
 
+### Game Beginning
+
+![New Game with Animal Theme](assets/screenshots/play_animal.png)
+The game will begin once the user has selected one of the themes from the theme selection menu, and will randomly choose a word from the corresponding word list, and display the word progress (currently an underscore per letter of the word), the amount of lives, the empty list of guessed letters, and a prompt to guess a letter
+
 ### Lives Display
 
 ![Lives counter showing 6 lives remaining](assets/screenshots/lives_remaining.png)
