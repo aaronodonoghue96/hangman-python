@@ -114,11 +114,14 @@ The user is shown the number of lives they have remaining before every turn, exc
 
 ### Word Progress Display
 
+![Word Progress at start of game, showing no letters](assets/screenshots/word_progress_empty.png)
+![Word Progress mid-game, showing two letters](assets/screenshots/word_progress_partial.png)
 The user is shown how much of the word they have filled in, and how much of the word is left, before every turn, except when they win, where the winning message is shown instead (which contains the full word), and when they lose, where the losing message is shown instead (which also contains the full word).
 
 ### Guessed Letters Display
 
-The user is shown which letters they have already guessed before every turn.
+![Guessed Letters](assets/screenshots/guessed_letters)
+The user is shown which letters they have already guessed before every turn, except when they win or lose, in which case the win or lose message respectively is shown instead.
 
 ### Play Again
 
