@@ -130,12 +130,18 @@ The user is shown how much of the word they have filled in, and how much of the 
 
 ### Guessed Letters Display
 
-![Guessed Letters](assets/screenshots/guessed_letters)
+![Guessed Letters](assets/screenshots/guessed_letters.png)
 The user is shown which letters they have already guessed before every turn, except when they win or lose, in which case the win or lose message respectively is shown instead.
 
 ### Validation
 
-The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all).
+![Validation for Number](assets/screenshots/validate_number.png)
+![Validation for One Letter at a Time](assets/screenshots/validate_one_letter.png)
+![Validation for Symbol](assets/screenshots/validate_symbol.png)
+![Validation for Punctuation](assets/screenshots/validate_punctuation.png)
+![Validation for Empty](assets/screenshots/validate_empty.png)
+![Validation for Foreign Letter](assets/screenshots/foreign_letter.png)
+The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all). The validation also ensures that only guesses of one letter at a time will be accepted, telling the user to enter one letter at a time if multiple letters are detected.
 
 ### Guess Checking
 
@@ -154,7 +160,7 @@ The game will end when the player either wins or loses. Winning the game is achi
 ![Play Again - Yes chosen, return to theme selection menu](assets/screenshots/play_again_yes.png)
 ![Play Again - No chosen, return to main menu](assets/screenshots/play_again_no.png)
 ![Play Again - invalid options chosen, repeat prompt](assets/screenshots/play_again_invalid.png)
-The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead.
+The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead. If they provide an invalid option (anything except Y, N, y or n), including no input at all, they will be prompted to select a valid option and the question will be repeated until they do so.
 
 ### Future Features
 
