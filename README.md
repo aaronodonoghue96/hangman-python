@@ -69,9 +69,7 @@ In addition to being a solution to this assignment, the game of hangman, which t
 | As a user, I want to view my stats to see how often I have won and lost, and my current winning streak and win ratio. | The user is able to view their stats from the main menu by entering S. |
 
 ### Design
-
-![Flowchart of the hangman game application](assets/screenshots/flowchart_hangman.png)
-This flowchart shows the logic involved in the project, including the main game logic and navigation between menus and the other options available in them besides the game itself. The main menu offers the options to view the rules, view your stats across previous games (both of which simply display the text and return to the main menu), play the game, or quit (which ends the application).
+The flowchart below shows the logic involved in the project, including the main game logic and navigation between menus and the other options available in them besides the game itself. The main menu offers the options to view the rules, view your stats across previous games (both of which simply display the text and return to the main menu), play the game, or quit (which ends the application).
 
 Choosing Play brings you to the theme selection menu, where one of four possible themes can be chosen, or you can go back to the main menu. Choosing any of the themes will lead to starting the game with a random word from that theme's wordlist.
 
@@ -79,96 +77,96 @@ The player must guess letters, which will either bring them closer to revealing 
 
 After the game ends, the player is given the option to play again, which if they accept, brings them to the theme selection menu to choose the theme for the next game, and if they decline, they will be taken to the main menu instead.
 
+![Flowchart of the hangman game application](assets/screenshots/flowchart_hangman.png)
+
 ## Features
 
-Screenshots of each feature to show project outcomes will go here
-
 ### Main Menu
-
-![Main Menu](assets/screenshots/main_menu.png)
 The user sees the main menu upon starting the application, and from there, has the options to play, see the rules, see their stats, or quit.
 
-### Theme Selection
+![Main Menu](assets/screenshots/main_menu.png)
 
-![Theme Selection Screen](assets/screenshots/theme_selection_screen.png)
+### Theme Selection
 Once the user has selected Play from the main menu by entering P and pressing Enter, they can select from one of four themes, animals, foods, colours and instruments by entering the first letter of the category followed by Enter. Each of these options will start the game with a word related to one of those categories from the corresponding word list.
 
-### Back
+![Theme Selection Screen](assets/screenshots/theme_selection_screen.png)
 
-![Back](assets/screenshots/back.png)
+### Back
 The user can go back to the main menu if they are in the theme selection menu by pressing X and Enter.
 
-### Rules
+![Back](assets/screenshots/back.png)
 
-![Rules Screen](assets/screenshots/rules_screen.png)
+### Rules
 The user can view the rules of the game from the main menu by pressing R and Enter.
 
+![Rules Screen](assets/screenshots/rules_screen.png)
+
 ### Stats
+The user can view their stats, i.e. wins, losses, current winning streak, and win ratio, from the main menu by pressing S and Enter. If the user has not played any games yet, the win ratio will be 0 (to avoid a division by zero error), and the user will be told that because no games have been played, no games have been won yet.
 
 ![Winning Streak of 4](assets/screenshots/win_streak.png)
 ![Stats Screen after zero games](assets/screenshots/zero_stats_screen.png)
 ![Stats Screen](assets/screenshots/stats_screen.png)
-The user can view their stats, i.e. wins, losses, current winning streak, and win ratio, from the main menu by pressing S and Enter. If the user has not played any games yet, the win ratio will be 0 (to avoid a division by zero error), and the user will be told that because no games have been played, no games have been won yet.
 
 ### Quit
-
-![Quit](assets/screenshots/quit.png)
 The user can quit the application by pressing Q and Enter in the main menu.
 
+![Quit](assets/screenshots/quit.png)
+
 ### Game Beginning
+The game will begin once the user has selected one of the themes from the theme selection menu, and will randomly choose a word from the corresponding word list, and display the word progress (currently an underscore per letter of the word), the amount of lives, the empty list of guessed letters, and a prompt to guess a letter
 
 ![New Game with Animal Theme](assets/screenshots/play_animal.png)
 ![New Game with Colour Theme](assets/screenshots/play_colour.png)
 ![New Game with Food Theme](assets/screenshots/play_food.png)
 ![New Game with Instrument Theme](assets/screenshots/play_instrument.png)
-The game will begin once the user has selected one of the themes from the theme selection menu, and will randomly choose a word from the corresponding word list, and display the word progress (currently an underscore per letter of the word), the amount of lives, the empty list of guessed letters, and a prompt to guess a letter
 
 ### Lives Display
+The user is shown the number of lives they have remaining before every turn, except when they win or lose, where the win or lose messages respectively are shown instead.
 
 ![Lives counter showing 6 lives remaining](assets/screenshots/lives_remaining.png)
 ![Lives counter showing the full 8 lives remaining](assets/screenshots/lives_remaining_full.png)
-The user is shown the number of lives they have remaining before every turn, except when they win or lose, where the win or lose messages respectively are shown instead.
 
 ### Word Progress Display
+The user is shown how much of the word they have filled in, and how much of the word is left, before every turn, except when they win, where the winning message is shown instead (which contains the full word), and when they lose, where the losing message is shown instead (which also contains the full word).
 
 ![Word Progress at start of game, showing no letters](assets/screenshots/word_progress_empty.png)
 ![Word Progress mid-game, showing two letters](assets/screenshots/word_progress_partial.png)
-The user is shown how much of the word they have filled in, and how much of the word is left, before every turn, except when they win, where the winning message is shown instead (which contains the full word), and when they lose, where the losing message is shown instead (which also contains the full word).
 
 ### Guessed Letters Display
-
-![Guessed Letters](assets/screenshots/guessed_letters.png)
 The user is shown which letters they have already guessed before every turn, except when they win or lose, in which case the win or lose message respectively is shown instead.
 
+![Guessed Letters](assets/screenshots/guessed_letters.png)
+
 ### Validation
+The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all). The validation also ensures that only guesses of one letter at a time will be accepted, telling the user to enter one letter at a time if multiple letters are detected.
 
 ![Validation for Number](assets/screenshots/validate_number.png)
 ![Validation for One Letter at a Time](assets/screenshots/validate_one_letter.png)
 ![Validation for Symbol](assets/screenshots/validate_symbol.png)
-![Validation for Punctuation](assets/screenshots/validate_punctuation.png)
 ![Validation for Empty](assets/screenshots/validate_empty.png)
-![Validation for Foreign Letter](assets/screenshots/validate_foreign_letter.png)
+![Validation for Punctuation](assets/screenshots/validate_punctuation.png)
 ![Validation for Duplicate Letter](assets/screenshots/validate_duplicate.png)
-The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all). The validation also ensures that only guesses of one letter at a time will be accepted, telling the user to enter one letter at a time if multiple letters are detected.
+![Validation for Foreign Letter](assets/screenshots/validate_foreign_letter.png)
 
 ### Guess Checking
+After successfully passing through validation, each guess is checked against the word to see if it is correct (i.e. in the word at least once) or incorrect (i.e. not present in the word). If it is correct, all occurrences of that letter will be revealed in the word progress. If it is incorrect, the user will lose a life.
 
 ![Correct Guess](assets/screenshots/guess_right.png)
 ![Incorrect Guess](assets/screenshots/guess_wrong.png)
-After successfully passing through validation, each guess is checked against the word to see if it is correct (i.e. in the word at least once) or incorrect (i.e. not present in the word). If it is correct, all occurrences of that letter will be revealed in the word progress. If it is incorrect, the user will lose a life.
 
 ### Game Ending
+The game will end when the player either wins or loses. Winning the game is achieved by guessing all the letters in the word with at least one life remaining, and will result in the user being congratulated and given the choice to play again. Losing the game is achieved by running out of lives before guessing all the letters in the word, and will result in a game over message and the word being revealed to the user, as well as being given the choice to play again.
 
 ![Win Outcome](assets/screenshots/win_outcome.png)
 ![Lose Outcome](assets/screenshots/lose_outcome.png)
-The game will end when the player either wins or loses. Winning the game is achieved by guessing all the letters in the word with at least one life remaining, and will result in the user being congratulated and given the choice to play again. Losing the game is achieved by running out of lives before guessing all the letters in the word, and will result in a game over message and the word being revealed to the user, as well as being given the choice to play again.
 
 ### Play Again
+The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead. If they provide an invalid option (anything except Y, N, y or n), including no input at all, they will be prompted to select a valid option and the question will be repeated until they do so.
 
 ![Play Again - Yes chosen, return to theme selection menu](assets/screenshots/play_again_yes.png)
 ![Play Again - No chosen, return to main menu](assets/screenshots/play_again_no.png)
 ![Play Again - invalid options chosen, repeat prompt](assets/screenshots/play_again_invalid.png)
-The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead. If they provide an invalid option (anything except Y, N, y or n), including no input at all, they will be prompted to select a valid option and the question will be repeated until they do so.
 
 ### Future Features
 
