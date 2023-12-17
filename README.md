@@ -140,7 +140,8 @@ The user is shown which letters they have already guessed before every turn, exc
 ![Validation for Symbol](assets/screenshots/validate_symbol.png)
 ![Validation for Punctuation](assets/screenshots/validate_punctuation.png)
 ![Validation for Empty](assets/screenshots/validate_empty.png)
-![Validation for Foreign Letter](assets/screenshots/foreign_letter.png)
+![Validation for Foreign Letter](assets/screenshots/validate_foreign_letter.png)
+![Validation for Duplicate Letter](assets/screenshots/validate_duplicate.png)
 The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all). The validation also ensures that only guesses of one letter at a time will be accepted, telling the user to enter one letter at a time if multiple letters are detected.
 
 ### Guess Checking
