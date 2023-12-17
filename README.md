@@ -24,6 +24,8 @@ Hangman is a terminal game written in Python, and it runs in the Code Institute 
   - [Word Progress Display](#word-progress-display)
   - [Guessed Letters Display](#guessed-letters-display)
   - [Validation](#validation)
+  - [Guess Checking](#guess-checking)
+  - [Game Ending](#game-ending)
   - [Future Features](#future-features)  
 - [Technologies Used](#technologies-used)
 - [Data Model](#data-model)
@@ -131,13 +133,25 @@ The user is shown how much of the word they have filled in, and how much of the 
 ![Guessed Letters](assets/screenshots/guessed_letters)
 The user is shown which letters they have already guessed before every turn, except when they win or lose, in which case the win or lose message respectively is shown instead.
 
-### Play Again
-
-The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead.
-
 ### Validation
 
 The user's choices are validated at several points in the game. All menus (main menu, theme selection menu, play again) have a limited set of valid options, so entering anything outside of those, or entering nothing at all, will prompt the user to enter a valid option. The user's guesses in the hangman game are also validated, to ensure that only letters of the English alphabet that have not already been guessed will be counted, and notify the user if they enter anything else (e.g. numbers, punctuation, foreign letters, symbols, whitespace, or even nothing at all).
+
+### Guess Checking
+
+![Correct Guess](assets/screenshots/guess_right.png)
+![Incorrect Guess](assets/screenshots/guess_wrong.png)
+After successfully passing through validation, each guess is checked against the word to see if it is correct (i.e. in the word at least once) or incorrect (i.e. not present in the word). If it is correct, all occurrences of that letter will be revealed in the word progress. If it is incorrect, the user will lose a life.
+
+### Game Ending
+
+![Win Outcome](assets/screenshots/win_outcome.png)
+![Lose Outcome](assets/screenshots/lose_outcome.png)
+The game will end when the player either wins or loses. Winning the game is achieved by guessing all the letters in the word with at least one life remaining, and will result in the user being congratulated and given the choice to play again. Losing the game is achieved by running out of lives before guessing all the letters in the word, and will result in a game over message and the word being revealed to the user, as well as being given the choice to play again.
+
+### Play Again
+
+The user is given the option to play again, which will take them back to the theme selection screen to choose the theme for the next game if they say yes. If they say no, they will be taken back to the main menu instead.
 
 ### Future Features
 
